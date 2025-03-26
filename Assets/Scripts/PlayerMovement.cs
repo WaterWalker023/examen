@@ -11,8 +11,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _inputActionAsset = GetComponentInChildren<PlayerInput>().actions;
+        
         _playerInputMap = _inputActionAsset.FindActionMap("PLayer");
         _moveAction = _playerInputMap.FindAction("Move");
+        
         _moveAction.AddBinding("<Gamepad>/leftStick");
         _moveAction.Enable();
     }
