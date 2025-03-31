@@ -191,7 +191,7 @@ MonoBehaviour:
       Input:
         InputAction: {fileID: -5630151704836100654, guid: e3c3434de5dabd241bd17de6fda783e2,
           type: 3}
-        Gain: -50
+        Gain: -100
         LegacyInput: 
         LegacyGain: 1
         CancelDeltaTime: 0
@@ -276,8 +276,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7115597807828857542}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006783394, y: 0, z: 0, w: 0.999977}
-  m_LocalPosition: {x: 0, y: -0.06783238, z: -4.99954}
+  m_LocalRotation: {x: 0.18480454, y: 0.040758643, z: -0.007671233, w: 0.9818998}
+  m_LocalPosition: {x: 1.3944714, y: 2.2777216, z: 5.074234}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
