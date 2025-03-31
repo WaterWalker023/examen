@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class MainMenu : MonoBehaviour
 {
-    private bool hasClicked = false;
+    private bool hasClicked;
 
     public bool HasClicked
     {
@@ -14,12 +14,6 @@ public class MainMenu : MonoBehaviour
     }
 
     public UnityEvent startGame = new();
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!hasClicked) { return; }
-    }
 
     public void gameBegin()
     {

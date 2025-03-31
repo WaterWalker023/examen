@@ -6,7 +6,7 @@ public class PauseGame : MonoBehaviour
 {
     [SerializeField] private GameObject pauseGameUI;
 
-    private bool isOpen = false;
+    private bool isOpen;
 
     public UnityEvent resumeGame = new();
 
@@ -22,6 +22,7 @@ public class PauseGame : MonoBehaviour
     void Update()
     {
         if (!Input.GetKeyDown(KeyCode.Escape)) return;
+        
         if (GameObject.FindWithTag("Canvas").GetComponent<MainMenu>().HasClicked)
         {
             pauseGame.Invoke();
