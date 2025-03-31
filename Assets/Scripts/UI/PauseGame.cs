@@ -22,21 +22,19 @@ public class PauseGame : MonoBehaviour
     void Update()
     {
         if (!Input.GetKeyDown(KeyCode.Escape)) return;
-        
-        if (GameObject.FindWithTag("Canvas").GetComponent<MainMenu>().HasClicked)
+
+        if (!GameObject.FindWithTag("Canvas").GetComponent<MainMenu>().HasClicked) return;
+        pauseGame.Invoke();
+
+        Time.timeScale = 0;
+
+        if (isOpen)
         {
-            pauseGame.Invoke();
-
-            Time.timeScale = 0;
-
-            if (isOpen)
-            {
-                GameResumed();
-            }
-            else
-            {
-                isOpen = true;
-            }
+            GameResumed();
+        }
+        else
+        {
+            isOpen = true;
         }
     }
 
