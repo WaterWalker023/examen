@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1123855994971017690}
   - component: {fileID: 8510347745486275153}
   - component: {fileID: 5874087860592877484}
+  - component: {fileID: 7069786917758439741}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -215,6 +216,21 @@ MonoBehaviour:
         DecelTime: 0
   PlayerIndex: 1
   AutoEnableInputs: 1
+--- !u!114 &7069786917758439741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5371260181934628491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4de6637b9e82894abdda487b44886fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCam: {fileID: 157521106685176788}
+  playerCamBrain: {fileID: 5002065496635902904}
+  playerInputAxisController: {fileID: 5874087860592877484}
 --- !u!1 &6788931960609427698
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,9 +558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e11548a3e3c7742bd66046972130e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCam: {fileID: 157521106685176788}
-  playerCamBrain: {fileID: 5002065496635902904}
-  playerInputAxisController: {fileID: 5874087860592877484}
   speed: 5
   gravity: -5
   sprintMult: 2

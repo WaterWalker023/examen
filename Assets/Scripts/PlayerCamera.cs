@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-    [SerializeField] private GameObject cam;
     [SerializeField] private CinemachineCamera playerCam;
     [SerializeField] private CinemachineBrain playerCamBrain;
     [SerializeField] private CinemachineInputAxisController playerInputAxisController;
