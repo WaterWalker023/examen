@@ -1,7 +1,5 @@
-using Unity.Cinemachine;
 using UnityEngine.InputSystem;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,10 +12,6 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController _playerController;
     private Vector3 _velocity;
-    
-    [SerializeField] private CinemachineCamera playerCam;
-    [SerializeField] private CinemachineBrain playerCamBrain;
-    [SerializeField] private CinemachineInputAxisController playerInputAxisController;
     
     [SerializeField] private int speed;
     [SerializeField] private int gravity;
@@ -34,20 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
         _playerController = GetComponent<CharacterController>();
         
-        int playercount = GameObject.FindGameObjectsWithTag("Player").Length;
-        
-        if (playercount == 1)
-        {
-            playerCam.OutputChannel = OutputChannels.Channel01;
-            playerCamBrain.ChannelMask = OutputChannels.Channel01;
-            playerInputAxisController.PlayerIndex = playercount;
-        }
-        else if(playercount == 2)
-        {
-            playerCam.OutputChannel = OutputChannels.Channel02;
-            playerCamBrain.ChannelMask = OutputChannels.Channel02;
-            playerInputAxisController.PlayerIndex = playercount;
-        }
     }
     
     void Update()

@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5371260181934628491}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.006783394, y: -0, z: -0, w: 0.999977}
-  m_LocalPosition: {x: 0, y: -0.06783238, z: -4.99954}
+  m_LocalRotation: {x: 0.30039066, y: -0, z: -0, w: 0.95381624}
+  m_LocalPosition: {x: 0, y: 2.865175, z: -4.0976543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -122,7 +122,7 @@ MonoBehaviour:
       Time: 3
     Restrictions: 0
   VerticalAxis:
-    Value: -0.7773257
+    Value: 34.962135
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89875cdc57c54474a8a74efd9b2a3b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScanRecursively: 0
+  ScanRecursively: 1
   SuppressInputWhileBlending: 1
   IgnoreTimeScale: 0
   m_ControllerManager:
@@ -191,7 +191,7 @@ MonoBehaviour:
       Input:
         InputAction: {fileID: -5630151704836100654, guid: e3c3434de5dabd241bd17de6fda783e2,
           type: 3}
-        Gain: -100
+        Gain: -99
         LegacyInput: 
         LegacyGain: 1
         CancelDeltaTime: 0
@@ -276,8 +276,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7115597807828857542}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18480454, y: 0.040758643, z: -0.007671233, w: 0.9818998}
-  m_LocalPosition: {x: 1.3944714, y: 2.2777216, z: 5.074234}
+  m_LocalRotation: {x: 0.30039066, y: 0, z: 0, w: 0.95381624}
+  m_LocalPosition: {x: 0, y: 2.865175, z: -4.0976543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
