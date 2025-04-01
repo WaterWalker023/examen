@@ -24,10 +24,4 @@ public class PlayerCamera : MonoBehaviour
             playerInputAxisController.PlayerIndex = playercount;
         }
     }
-
-    
-    void Update()
-    {
-        transform.rotation = new Quaternion(0, cam.transform.rotation.y, 0, cam.transform.rotation.w);
-    }
 }

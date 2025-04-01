@@ -35,16 +35,10 @@ public class PlayerMovement : MonoBehaviour
         Vector2 moveValue = _moveAction.ReadValue<Vector2>();
         Vector2 lookValue = _lookAction.ReadValue<Vector2>();
 
-        if (_sprintAction.IsPressed())
-        {
-            var move = transform.right * moveValue.x + transform.forward * moveValue.y;
-            _playerController.Move(move * speed); 
-        }
-        else
-        {
-            var move = transform.right * moveValue.x + transform.forward * moveValue.y;
-            _playerController.Move(move * Time.deltaTime * speed);
-        }
+        var totalSpeed = _sprintAction.IsPressed() ? speed += sprintMult : speed;
+        var move = transform.right * moveValue.x + transform.forward * moveValue.y;
+        _playerController.Move( totalSpeed * Time.deltaTime * move);
+        
         
         Vector3 rot = transform.rotation.eulerAngles;
         rot = new Vector3(0, rot.y+lookValue.x, 0);
