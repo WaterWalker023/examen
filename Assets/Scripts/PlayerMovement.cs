@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 moveValue = _moveAction.ReadValue<Vector2>();
         Vector2 lookValue = _lookAction.ReadValue<Vector2>();
 
-        var totalSpeed = _sprintAction.IsPressed() ? speed += sprintMult : speed;
+        var totalSpeed = _sprintAction.IsPressed() ? speed + sprintMult : speed;
         var move = transform.right * moveValue.x + transform.forward * moveValue.y;
         _playerController.Move( totalSpeed * Time.deltaTime * move);
         
