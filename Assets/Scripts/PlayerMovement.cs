@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int speed;
     [SerializeField] private int gravity;
     [SerializeField] private int sprintMult;
+
+    [SerializeField] private float lookSens;
    
     void Start()
     {
@@ -33,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Vector2 moveValue = _moveAction.ReadValue<Vector2>();
-        Vector2 lookValue = _lookAction.ReadValue<Vector2>();
+        Vector2 lookValue = _lookAction.ReadValue<Vector2>() * lookSens;
 
-        var totalSpeed = _sprintAction.IsPressed() ? speed += sprintMult : speed;
+        var totalSpeed = _sprintAction.IsPressed() ? speed + sprintMult : speed;
         var move = transform.right * moveValue.x + transform.forward * moveValue.y;
         _playerController.Move( totalSpeed * Time.deltaTime * move);
         
