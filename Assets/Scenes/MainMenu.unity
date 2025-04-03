@@ -3384,13 +3384,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45500fd438e589f4cbb790ca9bcb85c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeGame: 5
-  displayTime: 1000
+  timeGame: 15
+  displayTime: 100
   endTimeGame: 0
   totalDegreesToTravel: 180
   startingOffset: 0
   timeGameTXT: {fileID: 49823855}
   directionalLight: {fileID: 734845399}
+  totaltime: 120
+  totalDisplayTime: 0
 --- !u!222 &9200220086502579627
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -6,8 +6,6 @@ public class dayNightCycle : MonoBehaviour
 {
     [SerializeField] private float timeGame;
     [SerializeField] private int displayTime;
-    
-    [SerializeField] private float endTimeGame;
 
     [SerializeField] private float totalDegreesToTravel;
 
@@ -17,9 +15,9 @@ public class dayNightCycle : MonoBehaviour
 
     [SerializeField] private GameObject directionalLight;
 
-    private float totaltime;
+    [SerializeField] private float totaltime;
 
-    private float totalDisplayTime;
+    [SerializeField] private float totalDisplayTime;
 
     
     private void Start()
@@ -41,10 +39,7 @@ public class dayNightCycle : MonoBehaviour
 
         timeGameTXT.text = Mathf.Floor(displayTime / 60).ToString("00") + ":" + Mathf.Floor(displayTime % 60).ToString("00");
 
-        if (timeGame > endTimeGame)
-        {
-            directionalLight.transform.rotation = Quaternion.Euler((timeGame / totaltime * totalDegreesToTravel) + startingOffset, 0, 0);
-        }
+        directionalLight.transform.rotation = Quaternion.Euler((timeGame / totaltime * totalDegreesToTravel) + startingOffset, 0, 0);
 
         if (!(timeGame <= 0)) return;
         timeGame = 0;
