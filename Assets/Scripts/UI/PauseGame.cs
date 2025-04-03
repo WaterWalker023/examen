@@ -28,6 +28,8 @@ public class PauseGame : MonoBehaviour
 
         Time.timeScale = 0;
 
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+
         if (isOpen)
         {
             GameResumed();
@@ -41,6 +43,8 @@ public class PauseGame : MonoBehaviour
     public void GameResumed()
     {
         Time.timeScale = 1;
+        
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         
         isOpen = false;
         

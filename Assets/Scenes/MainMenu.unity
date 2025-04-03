@@ -2084,7 +2084,7 @@ Canvas:
   m_GameObject: {fileID: 9181850547097013665}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1914029961}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -3386,7 +3386,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeGame: 15
   displayTime: 100
-  endTimeGame: 0
   totalDegreesToTravel: 180
   startingOffset: 0
   timeGameTXT: {fileID: 49823855}
