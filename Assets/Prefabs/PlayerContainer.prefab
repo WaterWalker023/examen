@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8510347745486275153}
   - component: {fileID: 5874087860592877484}
   - component: {fileID: 7069786917758439741}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CinemachineCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5371260181934628491}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08715574, y: -0, z: -0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: -1.7364817, z: -9.848078}
+  m_LocalRotation: {x: 0.18036504, y: -0, z: -0, w: 0.9835997}
+  m_LocalPosition: {x: 0, y: 3.5481403, z: -9.349369}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -123,7 +123,7 @@ MonoBehaviour:
       Time: 3
     Restrictions: 0
   VerticalAxis:
-    Value: -10
+    Value: 20.782045
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -240,7 +240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6818224060666232394}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 7378040670904533827}
   - component: {fileID: 5002065496635902904}
   - component: {fileID: 829495255538208202}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CinemachineBrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,8 +292,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7115597807828857542}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08715574, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: -1.7364817, z: -9.848078}
+  m_LocalRotation: {x: 0.18036504, y: 0, z: 0, w: 0.9835997}
+  m_LocalPosition: {x: 0, y: 3.5481403, z: -9.349369}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 7995376182224954347}
   - component: {fileID: 2161730307861161836}
   - component: {fileID: 1634870990329074271}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -559,9 +559,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 45
-  gravity: -1
+  gravity: -84
   sprintMult: 2
+  jumpSpeed: 4
   lookSens: 1
+  isOnGround: 0
+  groundCheck: {x: 0, y: 0.8, z: 0}
+  groundCheckSize: 0.4
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!143 &1634870990329074271
 CharacterController:
   m_ObjectHideFlags: 0
