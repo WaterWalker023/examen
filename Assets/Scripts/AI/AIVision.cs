@@ -23,8 +23,7 @@ public class AIVision : MonoBehaviour
     {
         Scan();
         
-        _visibletime += (Time.deltaTime * _playersvisible);
-        if (_playersvisible == 0) { return; }
+        if (_playersvisible == 0) {_visibletime = 0; return; }
         
         SeeingPlayer();
     }
@@ -59,10 +58,10 @@ public class AIVision : MonoBehaviour
 
     private void SeeingPlayer()
     {
-        
-        if (_visibletime >= timeToSeePlayer)
+        _visibletime += (Time.deltaTime * _playersvisible);
+        if (_visibletime > timeToSeePlayer)
         {
-            
+            Debug.Log("Seeing player");
         }
     }
     

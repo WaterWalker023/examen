@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class AggrowState : MonoBehaviour
@@ -6,6 +7,15 @@ public class AggrowState : MonoBehaviour
     void Start()
     {
         
+    }
+
+    private void OnEnable()
+    {
+        var test = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+        foreach (var player in test)
+        {
+            //send raycast
+        }
     }
 
     // Update is called once per frame
