@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 
 public class AIVision : MonoBehaviour
@@ -11,6 +13,7 @@ public class AIVision : MonoBehaviour
     
     private float _visibletime;
 
+    [SerializeField] private UnityEvent firstspot;
     private int _playersvisible;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -62,6 +65,7 @@ public class AIVision : MonoBehaviour
         if (_visibletime > timeToSeePlayer)
         {
             Debug.Log("Seeing player");
+            firstspot.Invoke();
         }
     }
     

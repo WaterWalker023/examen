@@ -14,7 +14,7 @@ public class AggrowState : MonoBehaviour
         var test = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
         foreach (var player in test)
         {
-            //send raycast
+            
         }
     }
 

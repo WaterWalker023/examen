@@ -13,4 +13,10 @@ public class AIStateMachine : MonoBehaviour
     {
         
     }
+
+    public void SeePlayer()
+    {
+        transform.GetComponent<WalkingState>().enabled = false;
+        transform.GetComponent<AggrowState>().enabled = true;
+    }
 }

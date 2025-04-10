@@ -7,7 +7,6 @@ using UnityEngine.Serialization;
 public class WalkingState : MonoBehaviour
 {
     private NavMeshAgent _agent;
-
     [SerializeField] private Vector4 randomrange;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
