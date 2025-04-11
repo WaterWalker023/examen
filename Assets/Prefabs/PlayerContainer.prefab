@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5371260181934628491}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18036504, y: -0, z: -0, w: 0.9835997}
-  m_LocalPosition: {x: 0, y: 3.5481403, z: -9.349369}
+  m_LocalRotation: {x: 0.008747246, y: -0, z: -0, w: 0.99996173}
+  m_LocalPosition: {x: 0, y: 0.17493823, z: -9.998469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -123,7 +123,7 @@ MonoBehaviour:
       Time: 3
     Restrictions: 0
   VerticalAxis:
-    Value: 20.782045
+    Value: 1.0023733
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -292,8 +292,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7115597807828857542}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18036504, y: 0, z: 0, w: 0.9835997}
-  m_LocalPosition: {x: 0, y: 3.5481403, z: -9.349369}
+  m_LocalRotation: {x: 0.008747246, y: 0, z: 0, w: 0.99996173}
+  m_LocalPosition: {x: 0, y: 0.17493823, z: -9.998469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -561,11 +561,10 @@ MonoBehaviour:
   speed: 45
   gravity: -84
   sprintMult: 2
-  jumpSpeed: 4
+  jumpSpeed: 10
   lookSens: 1
-  isOnGround: 0
   groundCheck: {x: 0, y: 0.8, z: 0}
-  groundCheckSize: 0.4
+  groundCheckSize: 0.6
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 1
