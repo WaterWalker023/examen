@@ -16,6 +16,7 @@ public class AIStateMachine : MonoBehaviour
 
     public void SeePlayer()
     {
+        Debug.Log("your mom");
         transform.GetComponent<WalkingState>().enabled = false;
         transform.GetComponent<AggrowState>().enabled = true;
     }

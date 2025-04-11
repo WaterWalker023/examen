@@ -64,7 +64,6 @@ public class AIVision : MonoBehaviour
         _visibletime += (Time.deltaTime * _playersvisible);
         if (_visibletime > timeToSeePlayer)
         {
-            Debug.Log("Seeing player");
             firstspot.Invoke();
         }
     }
