@@ -562,7 +562,7 @@ MonoBehaviour:
   gravity: -84
   sprintMult: 2
   jumpSpeed: 10
-  lookSens: 1
+  lookSens: 5
   groundCheck: {x: 0, y: 0.8, z: 0}
   groundCheckSize: 0.6
   groundLayerMask:
