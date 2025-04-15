@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Physics.CheckSphere(transform.position - groundCheck, groundCheckSize, groundLayerMask))
         {
-            _velocity.y = 2;
+            _velocity.y = gravity;
         }
         
         float jumpValue = _jumpAction.ReadValue<float>();
