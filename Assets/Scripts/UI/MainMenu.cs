@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     private InputActionAsset _inputActionAsset;
     private InputActionMap _playerInputMap;
+
+    private PlayerInputManager playerInputActivate;
     
     private bool hasClicked;
 
@@ -22,16 +24,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        var playerInputDeactivate = FindAnyObjectByType<PlayerInputManager>();
-        playerInputDeactivate.GetComponent<PlayerInputManager>().enabled = false;
-    }
-
-    private void Update()
-    {
-        if (!hasClicked) return;
-        var playerInputActivate = FindAnyObjectByType<PlayerInputManager>();
-        playerInputActivate.GetComponent<PlayerInputManager>().enabled = true;
-        playerInputActivate.GetComponent<PlayerInputManager>().EnableJoining();
+        playerInputActivate = FindAnyObjectByType<PlayerInputManager>();
+        playerInputActivate.GetComponent<PlayerInputManager>().enabled = false;
     }
 
     public void gameBegin()
@@ -39,6 +33,9 @@ public class MainMenu : MonoBehaviour
         hasClicked = true;
         
         startGame.Invoke();
+        
+        playerInputActivate.GetComponent<PlayerInputManager>().enabled = true;
+        playerInputActivate.GetComponent<PlayerInputManager>().EnableJoining();
     }
 
     public void quitGame()
