@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
         _playerInputActivate.GetComponent<PlayerInputManager>().enabled = false;
     }
 
-    public void gameBegin()
+    public void GameBegin()
     {
         _hasClicked = true;
         
@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
         _playerInputActivate.GetComponent<PlayerInputManager>().EnableJoining();
     }
 
-    public void quitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
