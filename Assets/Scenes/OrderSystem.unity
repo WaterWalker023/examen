@@ -2735,9 +2735,13 @@ MonoBehaviour:
   order: 0
   orders: 00000000000000000000000000000000
   currentOrders: 00000000000000000000000000000000
-  maxOrder: 6
+  selectedOrders: 00000000
+  maxOrder: 1
   minOrder: 1
+  maxSelectedOrder: 10
+  minSelectedOrder: 0
   orderRandomized: 0
+  orderSelected: 0
   orderText1: {fileID: 1049555991}
   orderText2: {fileID: 1166206600}
   orderText3: {fileID: 368927137}
@@ -2985,7 +2989,7 @@ GameObject:
   - component: {fileID: 1497575003}
   m_Layer: 0
   m_Name: ordered item
-  m_TagString: Lettuce
+  m_TagString: Carrot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

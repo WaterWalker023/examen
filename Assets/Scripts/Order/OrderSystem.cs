@@ -8,11 +8,16 @@ public class OrderSystem : MonoBehaviour
 
     [SerializeField] private int[] orders = {0, 0, 0, 0};
     [SerializeField] private int[] currentOrders = {0, 0, 0, 0};
+    [SerializeField] private int[] selectedOrders = {0};
     
     [SerializeField] private int maxOrder;
     [SerializeField] private int minOrder;
     
+    [SerializeField] private int maxSelectedOrder;
+    [SerializeField] private int minSelectedOrder;
+    
     [SerializeField] private bool orderRandomized;
+    [SerializeField] private bool orderSelected;
     
     [SerializeField] private TMP_Text orderText1;
     [SerializeField] private TMP_Text orderText2;
@@ -24,7 +29,7 @@ public class OrderSystem : MonoBehaviour
 
     void Start()
     {
-        print("Hello world");
+        
     }
 
     // Update is called once per frame
@@ -32,12 +37,120 @@ public class OrderSystem : MonoBehaviour
     void Update()
     {
         if (!GameObject.FindWithTag("Canvas").GetComponent<MainMenu>().HasClicked) return;
-        RandomizeOrder();
+        SelectedOrder();
+        
+        if (currentOrders[0] == 0)
+        {
+            orderSelected = false;
+            orderRandomized = false;
+            OrderCompleted();
+        }
     }
     
     private void OnCollisionEnter(Collision other)
     {
         CheckOrder(other);
+    }
+
+    private void OrderCompleted()
+    {
+        SelectedOrder();
+    }
+
+    private void SelectedOrder()
+    {
+        if (orderSelected) return;
+        for (int s = 0; s < selectedOrders.Length; s++)
+        {
+            selectedOrders[s] = Random.Range(minSelectedOrder, maxSelectedOrder);
+            orderSelected = true;
+            
+            RandomizeOrder();
+            SwitchOrder(selectedOrders[s]);
+        }
+    }
+
+    private void SwitchOrder(int newOrder)
+    {
+        switch (newOrder)
+        {
+            default:
+                orderText1.enabled = false;
+                orderText2.enabled = false;
+                orderText3.enabled = false;
+                orderText4.enabled = false;
+                break;
+            
+            case 0:
+                orderText1.enabled = true;
+                orderText2.enabled = false;
+                orderText3.enabled = false;
+                orderText4.enabled = false;
+                break;
+            
+            case 1:
+                orderText1.enabled = false;
+                orderText2.enabled = true;
+                orderText3.enabled = false;
+                orderText4.enabled = false;
+                break;
+            
+            case 2:
+                orderText1.enabled = false;
+                orderText2.enabled = false;
+                orderText3.enabled = true;
+                orderText4.enabled = false;
+                break;
+            
+            case 3:
+                orderText1.enabled = false;
+                orderText2.enabled = false;
+                orderText3.enabled = false;
+                orderText4.enabled = true;
+                break;
+            
+            case 4:
+                orderText1.enabled = true;
+                orderText2.enabled = true;
+                orderText3.enabled = false;
+                orderText4.enabled = false;
+                break;
+            
+            case 5:
+                orderText1.enabled = true;
+                orderText2.enabled = false;
+                orderText3.enabled = true;
+                orderText4.enabled = false;
+                break;
+            
+            case 6:
+                orderText1.enabled = true;
+                orderText2.enabled = false;
+                orderText3.enabled = false;
+                orderText4.enabled = true;
+                break;
+            
+            case 7:
+                orderText1.enabled = false;
+                orderText2.enabled = true;
+                orderText3.enabled = true;
+                orderText4.enabled = false;
+                break;
+            
+            case 8:
+                orderText1.enabled = false;
+                orderText2.enabled = true;
+                orderText3.enabled = false;
+                orderText4.enabled = true;
+                break;
+            
+            case 9:
+                orderText1.enabled = false;
+                orderText2.enabled = false;
+                orderText3.enabled = true;
+                orderText4.enabled = true;
+                break;
+        }
     }
 
     private void RandomizeOrder()
