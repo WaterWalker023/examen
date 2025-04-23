@@ -1,28 +1,44 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class MainMenu : MonoBehaviour
 {
-    private bool hasClicked;
+    private InputActionAsset _inputActionAsset;
+    private InputActionMap _playerInputMap;
+
+    private PlayerInputManager _playerInputActivate;
+    
+    private bool _hasClicked;
 
     public bool HasClicked
     {
         get
         {
-            return hasClicked;
+            return _hasClicked;
         }
     }
 
     public UnityEvent startGame = new();
 
-    public void gameBegin()
+    private void Start()
     {
-        hasClicked = true;
-        
-        startGame.Invoke();
+        _playerInputActivate = FindAnyObjectByType<PlayerInputManager>();
+        _playerInputActivate.GetComponent<PlayerInputManager>().enabled = false;
     }
 
-    public void quitGame()
+    public void GameBegin()
+    {
+        _hasClicked = true;
+        
+        startGame.Invoke();
+        
+        _playerInputActivate.GetComponent<PlayerInputManager>().enabled = true;
+        _playerInputActivate.GetComponent<PlayerInputManager>().EnableJoining();
+    }
+
+    public void QuitGame()
     {
         Application.Quit();
     }
