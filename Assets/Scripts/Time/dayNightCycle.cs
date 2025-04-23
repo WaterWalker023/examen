@@ -19,6 +19,14 @@ public class dayNightCycle : MonoBehaviour
 
     [SerializeField] private float totalDisplayTime;
 
+    public float GetTime
+    {
+        get
+        {
+            return timeGame;
+        }
+    }
+
     
     private void Start()
     {

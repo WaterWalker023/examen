@@ -4,11 +4,12 @@ using Random = UnityEngine.Random;
 
 public class OrderSystem : MonoBehaviour
 {
-    [SerializeField] private int order;
-
     [SerializeField] private int[] orders = {0, 0, 0, 0};
     [SerializeField] private int[] currentOrders = {0, 0, 0, 0};
     [SerializeField] private int[] selectedOrders = {0};
+    
+    [SerializeField] private int ordersCompleted;
+    [SerializeField] private int maxAmountOfOrdersDaily;
     
     [SerializeField] private int maxOrder;
     [SerializeField] private int minOrder;
@@ -38,12 +39,21 @@ public class OrderSystem : MonoBehaviour
     {
         if (!GameObject.FindWithTag("Canvas").GetComponent<MainMenu>().HasClicked) return;
         SelectedOrder();
-        
-        if (currentOrders[0] == 0)
+
+        var ordersDone = 0;
+        for (int i = 0; i < currentOrders.Length; i++)
         {
-            orderSelected = false;
-            orderRandomized = false;
+            ordersDone += currentOrders[i];
+        }
+        
+        if (ordersDone == 0)
+        {
             OrderCompleted();
+        }
+
+        if (ordersCompleted < maxAmountOfOrdersDaily && GameObject.FindWithTag("Canvas").GetComponent<dayNightCycle>().GetTime == 0)
+        {
+            Time.timeScale = 0;
         }
     }
     
@@ -54,6 +64,11 @@ public class OrderSystem : MonoBehaviour
 
     private void OrderCompleted()
     {
+        ordersCompleted++;
+        
+        orderSelected = false;
+        orderRandomized = false;
+        
         SelectedOrder();
     }
 
@@ -79,6 +94,11 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = false;
                 orderText3.enabled = false;
                 orderText4.enabled = false;
+                
+                currentOrders[0] = 0;
+                currentOrders[1] = 0;
+                currentOrders[2] = 0;
+                currentOrders[3] = 0;
                 break;
             
             case 0:
@@ -86,6 +106,10 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = false;
                 orderText3.enabled = false;
                 orderText4.enabled = false;
+                
+                currentOrders[1] = 0;
+                currentOrders[2] = 0;
+                currentOrders[3] = 0;
                 break;
             
             case 1:
@@ -93,6 +117,10 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = true;
                 orderText3.enabled = false;
                 orderText4.enabled = false;
+                
+                currentOrders[0] = 0;
+                currentOrders[2] = 0;
+                currentOrders[3] = 0;
                 break;
             
             case 2:
@@ -100,6 +128,10 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = false;
                 orderText3.enabled = true;
                 orderText4.enabled = false;
+                
+                currentOrders[0] = 0;
+                currentOrders[1] = 0;
+                currentOrders[3] = 0;
                 break;
             
             case 3:
@@ -107,6 +139,10 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = false;
                 orderText3.enabled = false;
                 orderText4.enabled = true;
+                
+                currentOrders[0] = 0;
+                currentOrders[1] = 0;
+                currentOrders[2] = 0;
                 break;
             
             case 4:
@@ -114,6 +150,9 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = true;
                 orderText3.enabled = false;
                 orderText4.enabled = false;
+                
+                currentOrders[2] = 0;
+                currentOrders[3] = 0;
                 break;
             
             case 5:
@@ -121,6 +160,9 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = false;
                 orderText3.enabled = true;
                 orderText4.enabled = false;
+                
+                currentOrders[1] = 0;
+                currentOrders[3] = 0;
                 break;
             
             case 6:
@@ -128,6 +170,9 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = false;
                 orderText3.enabled = false;
                 orderText4.enabled = true;
+                
+                currentOrders[1] = 0;
+                currentOrders[2] = 0;
                 break;
             
             case 7:
@@ -135,6 +180,9 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = true;
                 orderText3.enabled = true;
                 orderText4.enabled = false;
+                
+                currentOrders[0] = 0;
+                currentOrders[3] = 0;
                 break;
             
             case 8:
@@ -142,6 +190,9 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = true;
                 orderText3.enabled = false;
                 orderText4.enabled = true;
+                
+                currentOrders[0] = 0;
+                currentOrders[2] = 0;
                 break;
             
             case 9:
@@ -149,6 +200,9 @@ public class OrderSystem : MonoBehaviour
                 orderText2.enabled = false;
                 orderText3.enabled = true;
                 orderText4.enabled = true;
+                
+                currentOrders[0] = 0;
+                currentOrders[1] = 0;
                 break;
         }
     }
