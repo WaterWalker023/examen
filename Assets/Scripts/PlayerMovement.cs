@@ -27,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int gravity;
     [SerializeField] private int sprintMult;
     [SerializeField] private int jumpSpeed;
-
+    public int currentJumpSpeed;
+    
     [SerializeField] private float lookSens;
 
     [SerializeField] private Vector3 groundCheck;
@@ -53,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         _jumpAction = _playerInputMap.FindAction("Jump");
 
         _playerController = GetComponent<CharacterController>();
-        
+        currentJumpSpeed = jumpSpeed;
     }
     
     void Update()
@@ -88,12 +89,17 @@ public class PlayerMovement : MonoBehaviour
         
         if (jumpValue && Isgrounded())
         {
-            _velocity.y = Mathf.Sqrt(jumpSpeed * -2f * gravity);
+            _velocity.y = Mathf.Sqrt(currentJumpSpeed * -2f * gravity);
         }
         _velocity.y += gravity * Time.deltaTime;
         _playerController.Move(_velocity * Time.deltaTime);
     }
-    
+
+    public void ResetJump()
+    {
+        currentJumpSpeed = jumpSpeed;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
