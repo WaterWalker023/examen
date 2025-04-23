@@ -9,7 +9,8 @@ public class AggrowState : MonoBehaviour
     private GameObject _target;
     private NavMeshAgent _agent;
     [SerializeField] private float sphereRadius;
-    private RaycastHit Hit;
+    [SerializeField] private float attackDistance;
+    private RaycastHit _hit;
     
     private float _noPlayerVisibleTime;
     [SerializeField] private float giveUpTime;
@@ -21,12 +22,10 @@ public class AggrowState : MonoBehaviour
         var allplayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
         foreach (var player in allplayers)
         {
-            Physics.Raycast(transform.position,player.transform.position - transform.position, out Hit, math.INFINITY);
-            Debug.Log(Hit.collider.name);
-            if (Hit.collider.transform == player.transform && Hit.distance > _distance)
+            Physics.Raycast(transform.position,player.transform.position - transform.position, out _hit, math.INFINITY);
+            if (_hit.collider.transform == player.transform && _hit.distance > _distance)
             {
-                Debug.Log("Hit " + Hit.collider.name);
-                _distance = Hit.distance;
+                _distance = _hit.distance;
                 _target = player.gameObject;
             }
         }
@@ -35,17 +34,20 @@ public class AggrowState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_target.name);
-        Physics.SphereCast(transform.position,sphereRadius, _target.transform.position - transform.position, out Hit, math.INFINITY);
-        if (Hit.collider.transform == _target.transform)
+        Physics.SphereCast(transform.position,sphereRadius, _target.transform.position - transform.position, out _hit, math.INFINITY);
+        if (_hit.collider.transform == _target.transform)
         {
             _agent.SetDestination(_target.transform.position);
         }
-
+        
+        if (_hit.distance <= attackDistance)
+        {
+            _hit.transform.position = _hit.transform.parent.position;
+        }
+        
         if (!_agent.hasPath)
         {
             _noPlayerVisibleTime += 1 * Time.deltaTime;
-            Debug.Log(_noPlayerVisibleTime);
             if (_noPlayerVisibleTime >= giveUpTime)
             {
                 GetComponent<AIStateMachine>().DontSeePlayer();
