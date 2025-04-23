@@ -8,8 +8,11 @@ public class AggrowState : MonoBehaviour
     private float _distance;
     private GameObject _target;
     private NavMeshAgent _agent;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+    [SerializeField] private float sphereRadius;
+    private RaycastHit Hit;
+    
+    private float _noPlayerVisibleTime;
+    [SerializeField] private float giveUpTime;
     private void OnEnable()
     {
         _agent = gameObject.GetComponent<NavMeshAgent>();
@@ -18,11 +21,12 @@ public class AggrowState : MonoBehaviour
         var allplayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
         foreach (var player in allplayers)
         {
-            Physics.Raycast(transform.position, player.transform.position - transform.position, out RaycastHit hit, math.INFINITY);
-            if (hit.collider.transform == player.transform && hit.distance > _distance)
+            Physics.Raycast(transform.position,player.transform.position - transform.position, out Hit, math.INFINITY);
+            Debug.Log(Hit.collider.name);
+            if (Hit.collider.transform == player.transform && Hit.distance > _distance)
             {
-                Debug.Log("Hit " + hit.collider.name);
-                _distance = hit.distance;
+                Debug.Log("Hit " + Hit.collider.name);
+                _distance = Hit.distance;
                 _target = player.gameObject;
             }
         }
@@ -32,10 +36,24 @@ public class AggrowState : MonoBehaviour
     void Update()
     {
         Debug.Log(_target.name);
-        Physics.Raycast(transform.position, _target.transform.position - transform.position, out RaycastHit hit, math.INFINITY);
-        if (hit.collider.transform == _target.transform)
+        Physics.SphereCast(transform.position,sphereRadius, _target.transform.position - transform.position, out Hit, math.INFINITY);
+        if (Hit.collider.transform == _target.transform)
         {
             _agent.SetDestination(_target.transform.position);
+        }
+
+        if (!_agent.hasPath)
+        {
+            _noPlayerVisibleTime += 1 * Time.deltaTime;
+            Debug.Log(_noPlayerVisibleTime);
+            if (_noPlayerVisibleTime >= giveUpTime)
+            {
+                GetComponent<AIStateMachine>().DontSeePlayer();
+            }
+        }
+        else
+        {
+            _noPlayerVisibleTime = 0;
         }
     }
 }

@@ -166,6 +166,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   timeToSeePlayer: 10
+  sphereRadius: 0.5
   firstspot:
     m_PersistentCalls:
       m_Calls:
@@ -193,6 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e929175f3aa250eff8fd64e43107460a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sphereRadius: 0.5
+  giveUpTime: 3
 --- !u!114 &4682302129394335730
 MonoBehaviour:
   m_ObjectHideFlags: 0

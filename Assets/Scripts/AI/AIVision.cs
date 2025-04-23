@@ -10,6 +10,7 @@ public class AIVision : MonoBehaviour
     [SerializeField] float visionRange;
     [SerializeField] LayerMask visionLayer;
     [SerializeField] float timeToSeePlayer;
+    [SerializeField] private float sphereRadius;
     
     private float _visibletime;
 
@@ -33,7 +34,7 @@ public class AIVision : MonoBehaviour
 
     public bool IsInSight(GameObject obj)
     {
-        Physics.Raycast(transform.position, obj.transform.position - transform.position, out RaycastHit hit, visionRange, visionLayer);
+        Physics.SphereCast(transform.position,sphereRadius ,obj.transform.position - transform.position, out RaycastHit hit, visionRange, visionLayer);
         if (hit.collider.transform == obj.transform)
         {
             Debug.DrawRay(transform.position, obj.transform.position - transform.position, Color.red);
