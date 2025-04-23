@@ -61,6 +61,7 @@ public class DoublePickup : MonoBehaviour, IInteractable
         }
     }
 
+    /*
     public Vector3 GetCombined(Vector3 vector3s)
     {
         
@@ -70,12 +71,12 @@ public class DoublePickup : MonoBehaviour, IInteractable
         
         for (int i = 0; i < _vector3List.Count; i++)
         {
-            comb = _vector3List[i];
+            comb += _vector3List[i];
         }
         
-        return comb;
+        return comb / _vector3List.Count * Time.deltaTime;
     }
-    
+    */
     public bool Interact(PlayerPickup interactor, GameObject player)
     {
         _objectRigidbody.constraints = RigidbodyConstraints.FreezeAll;
