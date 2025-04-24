@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerPickup : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private Transform endCapsule;
     [SerializeField] private float radiusCapsule;
     [SerializeField] private LayerMask overlapLayer;
+    
+    public int upThrowForce;
+    public int horizontalThrowForce;
     
     public GameObject carryPoint;
     

@@ -28,8 +28,8 @@ public class SinglePickup : MonoBehaviour, IInteractable
     {
         _rigidbody.constraints = RigidbodyConstraints.None;
         transform.parent = null;
-        _rigidbody.AddForce(player.transform.up*400);
-        _rigidbody.AddForce(player.transform.forward*600);
+        _rigidbody.AddForce(player.transform.up*interactor.upThrowForce);
+        _rigidbody.AddForce(player.transform.forward*interactor.horizontalThrowForce);
         return true;
     }
 }

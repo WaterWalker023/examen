@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int gravity;
     [SerializeField] private int sprintMult;
     [SerializeField] private int jumpSpeed;
-    public int currentJumpSpeed;
+    [HideInInspector] public int currentJumpSpeed;
     
     [SerializeField] private float lookSens;
 

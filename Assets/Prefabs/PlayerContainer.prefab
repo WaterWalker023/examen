@@ -659,6 +659,7 @@ MonoBehaviour:
   gravity: -84
   sprintMult: 2
   jumpSpeed: 4
+  currentJumpSpeed: 0
   lookSens: 1
   groundCheck: {x: 0, y: 0.8, z: 0}
   groundCheckSize: 0.4
@@ -708,4 +709,6 @@ MonoBehaviour:
   overlapLayer:
     serializedVersion: 2
     m_Bits: 64
+  upThrowForce: 400
+  verticalThrowForce: 600
   carryPoint: {fileID: 1603645776896236737}
