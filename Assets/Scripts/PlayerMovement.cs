@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Isgrounded())
         {
-            _velocity.y = gravity;
+            _velocity.y = -2;
         }
         
         if (jumpValue && Isgrounded())
