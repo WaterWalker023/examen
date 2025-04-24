@@ -1,14 +1,17 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class OrderSystem : MonoBehaviour
 {
-    [SerializeField] private int[] orders = {0, 0, 0, 0};
-    [SerializeField] private int[] currentOrders = {0, 0, 0, 0};
-    [SerializeField] private int[] selectedOrders = {0};
+    private int[] orders = {0, 0, 0, 0};
+    private int[] currentOrders = {0, 0, 0, 0};
+    private int[] selectedOrders = {0};
+
+    private int totalOnOff;
     
-    [SerializeField] private int ordersCompleted;
+    private int ordersCompleted;
     [SerializeField] private int maxAmountOfOrdersDaily;
     
     [SerializeField] private int maxOrder;
@@ -17,21 +20,13 @@ public class OrderSystem : MonoBehaviour
     [SerializeField] private int maxSelectedOrder;
     [SerializeField] private int minSelectedOrder;
     
-    [SerializeField] private bool orderRandomized;
-    [SerializeField] private bool orderSelected;
+    [SerializeField] private int orderOn;
+    [SerializeField] private int orderOff;
     
-    [SerializeField] private TMP_Text orderText1;
-    [SerializeField] private TMP_Text orderText2;
-    [SerializeField] private TMP_Text orderText3;
-    [SerializeField] private TMP_Text orderText4;
+    private bool orderRandomized;
+    private bool orderSelected;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-
-    void Start()
-    {
-        
-    }
+    [SerializeField] private List<TMP_Text> orderTexts;
 
     // Update is called once per frame
 
@@ -80,130 +75,30 @@ public class OrderSystem : MonoBehaviour
             selectedOrders[s] = Random.Range(minSelectedOrder, maxSelectedOrder);
             orderSelected = true;
             
-            RandomizeOrder();
             SwitchOrder(selectedOrders[s]);
+            RandomizeOrder();
         }
     }
 
     private void SwitchOrder(int newOrder)
     {
-        switch (newOrder)
+        for (int s = 0; s < orderTexts.Count; s++)
         {
-            default:
-                orderText1.enabled = false;
-                orderText2.enabled = false;
-                orderText3.enabled = false;
-                orderText4.enabled = false;
-                
-                currentOrders[0] = 0;
-                currentOrders[1] = 0;
-                currentOrders[2] = 0;
-                currentOrders[3] = 0;
-                break;
-            
-            case 0:
-                orderText1.enabled = true;
-                orderText2.enabled = false;
-                orderText3.enabled = false;
-                orderText4.enabled = false;
-                
-                currentOrders[1] = 0;
-                currentOrders[2] = 0;
-                currentOrders[3] = 0;
-                break;
-            
-            case 1:
-                orderText1.enabled = false;
-                orderText2.enabled = true;
-                orderText3.enabled = false;
-                orderText4.enabled = false;
-                
-                currentOrders[0] = 0;
-                currentOrders[2] = 0;
-                currentOrders[3] = 0;
-                break;
-            
-            case 2:
-                orderText1.enabled = false;
-                orderText2.enabled = false;
-                orderText3.enabled = true;
-                orderText4.enabled = false;
-                
-                currentOrders[0] = 0;
-                currentOrders[1] = 0;
-                currentOrders[3] = 0;
-                break;
-            
-            case 3:
-                orderText1.enabled = false;
-                orderText2.enabled = false;
-                orderText3.enabled = false;
-                orderText4.enabled = true;
-                
-                currentOrders[0] = 0;
-                currentOrders[1] = 0;
-                currentOrders[2] = 0;
-                break;
-            
-            case 4:
-                orderText1.enabled = true;
-                orderText2.enabled = true;
-                orderText3.enabled = false;
-                orderText4.enabled = false;
-                
-                currentOrders[2] = 0;
-                currentOrders[3] = 0;
-                break;
-            
-            case 5:
-                orderText1.enabled = true;
-                orderText2.enabled = false;
-                orderText3.enabled = true;
-                orderText4.enabled = false;
-                
-                currentOrders[1] = 0;
-                currentOrders[3] = 0;
-                break;
-            
-            case 6:
-                orderText1.enabled = true;
-                orderText2.enabled = false;
-                orderText3.enabled = false;
-                orderText4.enabled = true;
-                
-                currentOrders[1] = 0;
-                currentOrders[2] = 0;
-                break;
-            
-            case 7:
-                orderText1.enabled = false;
-                orderText2.enabled = true;
-                orderText3.enabled = true;
-                orderText4.enabled = false;
-                
-                currentOrders[0] = 0;
-                currentOrders[3] = 0;
-                break;
-            
-            case 8:
-                orderText1.enabled = false;
-                orderText2.enabled = true;
-                orderText3.enabled = false;
-                orderText4.enabled = true;
-                
-                currentOrders[0] = 0;
-                currentOrders[2] = 0;
-                break;
-            
-            case 9:
-                orderText1.enabled = false;
-                orderText2.enabled = false;
-                orderText3.enabled = true;
-                orderText4.enabled = true;
-                
-                currentOrders[0] = 0;
-                currentOrders[1] = 0;
-                break;
+            orderTexts[s].text = Random.Range(orderOff, orderOn).ToString();
+            totalOnOff += int.Parse(orderTexts[s].text);
+        }
+
+        if (totalOnOff == 0)
+        {
+            orderTexts[1].text = "1";
+        }
+        
+        for (int s = 0; s < orderTexts.Count; s++)
+        {
+            if (orderTexts[s].text == orderOff.ToString())
+            {
+                orderTexts[s].enabled = false;
+            }
         }
     }
 
@@ -212,14 +107,17 @@ public class OrderSystem : MonoBehaviour
         if (orderRandomized) return;
         for (var i = 0; i < orders.Length; i++)
         {
-            currentOrders[i] = orders[i] = Random.Range(minOrder, maxOrder);
-            orderRandomized = true;
+            if (orderTexts[i].text != orderOff.ToString())
+            {
+                currentOrders[i] = orders[i] = Random.Range(minOrder, maxOrder);
+                orderRandomized = true;
+            }
         }
-        
-        orderText1.text = currentOrders[0].ToString(": " + currentOrders[0]);
-        orderText2.text = currentOrders[1].ToString(": " + currentOrders[1]);
-        orderText3.text = currentOrders[2].ToString(": " + currentOrders[2]);
-        orderText4.text = currentOrders[3].ToString(": " + currentOrders[3]);
+
+        for (int i = 0; i < orderTexts.Count; i++)
+        {
+            orderTexts[i].text = currentOrders[i].ToString(": " + currentOrders[i]);
+        }
     }
 
     private void CheckOrder(Collision other)
@@ -234,8 +132,8 @@ public class OrderSystem : MonoBehaviour
             {
                 currentOrders[0]--;
                 Destroy(other.gameObject);
-            
-                orderText1.text = currentOrders[0].ToString(": " + currentOrders[0]);
+                
+                orderTexts[0].text = currentOrders[0].ToString(": " + currentOrders[0]);
             }
         }
         if (other.gameObject.CompareTag("Mushroom"))
@@ -248,8 +146,8 @@ public class OrderSystem : MonoBehaviour
             {
                 currentOrders[1]--;
                 Destroy(other.gameObject);
-            
-                orderText2.text = currentOrders[1].ToString(": " + currentOrders[1]);
+                
+                orderTexts[1].text = currentOrders[1].ToString(": " + currentOrders[1]);
             }
         }
         if (other.gameObject.CompareTag("Pumpkin"))
@@ -262,8 +160,8 @@ public class OrderSystem : MonoBehaviour
             {
                 currentOrders[2]--;
                 Destroy(other.gameObject);
-            
-                orderText3.text = currentOrders[2].ToString(": " + currentOrders[2]);
+                
+                orderTexts[2].text = currentOrders[2].ToString(": " + currentOrders[2]);
             }
         }
         if (other.gameObject.CompareTag("Lettuce"))
@@ -276,8 +174,8 @@ public class OrderSystem : MonoBehaviour
             {
                 currentOrders[3]--;
                 Destroy(other.gameObject);
-            
-                orderText4.text = currentOrders[3].ToString(": " + currentOrders[3]);
+                
+                orderTexts[3].text = currentOrders[3].ToString(": " + currentOrders[3]);
             }
         }
         else if (!other.gameObject.CompareTag("Ground"))

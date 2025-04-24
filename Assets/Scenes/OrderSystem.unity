@@ -3298,16 +3298,23 @@ MonoBehaviour:
   selectedOrders: 00000000
   ordersCompleted: 0
   maxAmountOfOrdersDaily: 5
-  maxOrder: 1
+  maxOrder: 5
   minOrder: 1
   maxSelectedOrder: 10
   minSelectedOrder: 0
+  orderOn: 4
+  orderOff: 0
   orderRandomized: 0
   orderSelected: 0
   orderText1: {fileID: 1049555991}
   orderText2: {fileID: 1166206600}
   orderText3: {fileID: 368927137}
   orderText4: {fileID: 1724607790}
+  orderTexts:
+  - {fileID: 1049555991}
+  - {fileID: 1166206600}
+  - {fileID: 368927137}
+  - {fileID: 1724607790}
 --- !u!1 &1202229002
 GameObject:
   m_ObjectHideFlags: 0
