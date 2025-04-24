@@ -19,6 +19,7 @@ public class SinglePickup : MonoBehaviour, IInteractable
     {
         transform.SetParent(player.transform);
         transform.position = interactor.carryPoint.transform.position;
+        transform.rotation = new Quaternion(0, 0, 0,0);
         _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         return true;
     }
@@ -27,8 +28,8 @@ public class SinglePickup : MonoBehaviour, IInteractable
     {
         _rigidbody.constraints = RigidbodyConstraints.None;
         transform.parent = null;
-        
-        _rigidbody.AddForce(player.transform.forward*300);
+        _rigidbody.AddForce(player.transform.up*interactor.upThrowForce);
+        _rigidbody.AddForce(player.transform.forward*interactor.horizontalThrowForce);
         return true;
     }
 }

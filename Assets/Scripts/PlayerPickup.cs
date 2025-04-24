@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerPickup : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private Transform endCapsule;
     [SerializeField] private float radiusCapsule;
     [SerializeField] private LayerMask overlapLayer;
+    
+    public int upThrowForce;
+    public int horizontalThrowForce;
     
     public GameObject carryPoint;
     
@@ -37,6 +41,7 @@ public class PlayerPickup : MonoBehaviour
             var interactable = _holdingObject.GetComponent<IInteractable>();
             interactable.PutDown(this, gameObject);
             _isHoldingObject = false;
+            GetComponent<PlayerMovement>().ResetJump();
             _holdingObject = null;
         }
         
@@ -48,6 +53,7 @@ public class PlayerPickup : MonoBehaviour
             {
                 interactable.Interact(this, gameObject);
                 _isHoldingObject = true;
+                GetComponent<PlayerMovement>().currentJumpSpeed = 0;
                 _holdingObject = _colliders[0].gameObject;
             }
         }

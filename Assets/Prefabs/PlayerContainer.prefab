@@ -551,7 +551,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1033004291477607545}
@@ -655,11 +655,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e11548a3e3c7742bd66046972130e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parseInput: 0
   speed: 25
   gravity: -84
   sprintMult: 2
   jumpSpeed: 4
+  currentJumpSpeed: 0
   lookSens: 1
   groundCheck: {x: 0, y: 0.8, z: 0}
   groundCheckSize: 0.4
@@ -709,4 +709,6 @@ MonoBehaviour:
   overlapLayer:
     serializedVersion: 2
     m_Bits: 64
+  upThrowForce: 400
+  verticalThrowForce: 600
   carryPoint: {fileID: 1603645776896236737}
