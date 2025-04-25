@@ -1,11 +1,14 @@
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerCamera : MonoBehaviour
 {
     [SerializeField] private CinemachineCamera playerCam;
     [SerializeField] private CinemachineBrain playerCamBrain;
-    [SerializeField] private CinemachineInputAxisController playerInputAxisController;
+    [SerializeField] private CinemachineInputAxisController playerInputAxisController; 
+    
     void Start()
     {
         int playercount = GameObject.FindGameObjectsWithTag("Player").Length;
@@ -21,6 +24,7 @@ public class PlayerCamera : MonoBehaviour
             playerCam.OutputChannel = OutputChannels.Channel02;
             playerCamBrain.ChannelMask = OutputChannels.Channel02;
             playerInputAxisController.PlayerIndex = playercount;
+            
         }
     }
 }
