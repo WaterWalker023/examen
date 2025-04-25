@@ -7,7 +7,7 @@ public class OrderSystem : MonoBehaviour
 {
     private int[] orders = {0, 0, 0, 0};
     private int[] currentOrders = {0, 0, 0, 0};
-    private int[] selectedOrders = {0};
+    private int selectedOrders = 0;
 
     private int totalOnOff;
     
@@ -27,6 +27,8 @@ public class OrderSystem : MonoBehaviour
     private bool orderSelected;
     
     [SerializeField] private List<TMP_Text> orderTexts;
+
+    [SerializeField] private string[] ingredientsTags;
 
     // Update is called once per frame
 
@@ -54,7 +56,7 @@ public class OrderSystem : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        CheckOrder(other);
+        CheckIngredient(other);
     }
 
     private void OrderCompleted()
@@ -70,14 +72,11 @@ public class OrderSystem : MonoBehaviour
     private void SelectedOrder()
     {
         if (orderSelected) return;
-        for (int s = 0; s < selectedOrders.Length; s++)
-        {
-            selectedOrders[s] = Random.Range(minSelectedOrder, maxSelectedOrder);
-            orderSelected = true;
-            
-            SwitchOrder(selectedOrders[s]);
-            RandomizeOrder();
-        }
+        selectedOrders = Random.Range(minSelectedOrder, maxSelectedOrder);
+        orderSelected = true;
+        
+        SwitchOrder(selectedOrders);
+        RandomizeOrder();
     }
 
     private void SwitchOrder(int newOrder)
@@ -98,6 +97,10 @@ public class OrderSystem : MonoBehaviour
             if (orderTexts[s].text == orderOff.ToString())
             {
                 orderTexts[s].enabled = false;
+            }
+            else
+            {
+                orderTexts[s].enabled = true;
             }
         }
     }
@@ -120,67 +123,28 @@ public class OrderSystem : MonoBehaviour
         }
     }
 
-    private void CheckOrder(Collision other)
+    private void CheckIngredient(Collision other)
     {
-        if (other.gameObject.CompareTag("Carrot"))
+        for (int i = 0; i < ingredientsTags.Length; i++)
         {
-            if (currentOrders[0] == 0)
+            if (other.gameObject.CompareTag(ingredientsTags[i]))
             {
-                Destroy(other.gameObject);
-            }
-            else
-            {
-                currentOrders[0]--;
-                Destroy(other.gameObject);
+                if (currentOrders[i] == 0)
+                {
+                    Destroy(other.gameObject);
+                }
+                else
+                {
+                    currentOrders[i]--;
+                    Destroy(other.gameObject);
                 
-                orderTexts[0].text = currentOrders[0].ToString(": " + currentOrders[0]);
+                    orderTexts[i].text = currentOrders[i].ToString(": " + currentOrders[i]);
+                }
             }
-        }
-        if (other.gameObject.CompareTag("Mushroom"))
-        {
-            if (currentOrders[1] == 0)
+            else if (!other.gameObject.CompareTag(ingredientsTags[i]))
             {
                 Destroy(other.gameObject);
             }
-            else
-            {
-                currentOrders[1]--;
-                Destroy(other.gameObject);
-                
-                orderTexts[1].text = currentOrders[1].ToString(": " + currentOrders[1]);
-            }
-        }
-        if (other.gameObject.CompareTag("Pumpkin"))
-        {
-            if (currentOrders[2] == 0)
-            {
-                Destroy(other.gameObject);
-            }
-            else
-            {
-                currentOrders[2]--;
-                Destroy(other.gameObject);
-                
-                orderTexts[2].text = currentOrders[2].ToString(": " + currentOrders[2]);
-            }
-        }
-        if (other.gameObject.CompareTag("Lettuce"))
-        {
-            if (currentOrders[3] == 0)
-            {
-                Destroy(other.gameObject);
-            }
-            else
-            {
-                currentOrders[3]--;
-                Destroy(other.gameObject);
-                
-                orderTexts[3].text = currentOrders[3].ToString(": " + currentOrders[3]);
-            }
-        }
-        else if (!other.gameObject.CompareTag("Ground"))
-        {
-            Destroy(other.gameObject);
         }
     }
 }

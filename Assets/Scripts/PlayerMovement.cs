@@ -68,7 +68,6 @@ public class PlayerMovement : MonoBehaviour
         
         if (!_parseInput)
         {
-            Debug.Log("test");
             _playerController.Move( totalSpeed * Time.deltaTime * move);
         }
         else
