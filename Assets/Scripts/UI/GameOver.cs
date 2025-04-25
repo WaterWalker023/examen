@@ -30,7 +30,7 @@ public class GameOver : MonoBehaviour
         else
         {
             isGameOver = false;
-            //Time.timeScale = 1;
+            Time.timeScale = 1;
         }
     }
 
