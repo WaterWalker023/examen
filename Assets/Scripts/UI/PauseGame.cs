@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseGame : MonoBehaviour
 {
     [SerializeField] private GameObject pauseGameUI;
 
     private bool isOpen;
+    
+    private PlayerInputManager _playerInputDeactivate;
 
     public UnityEvent resumeGame = new();
 
@@ -27,7 +30,7 @@ public class PauseGame : MonoBehaviour
         pauseGame.Invoke();
 
         Time.timeScale = 0;
-
+        
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
 
         if (isOpen)

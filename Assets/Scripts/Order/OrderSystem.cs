@@ -30,6 +30,22 @@ public class OrderSystem : MonoBehaviour
 
     [SerializeField] private string[] ingredientsTags;
 
+    public int ordersCompletedList
+    {
+        get
+        {
+            return ordersCompleted;
+        }
+    }
+    
+    public int maxOrdersDailyList
+    {
+        get
+        {
+            return maxAmountOfOrdersDaily;
+        }
+    }
+
     // Update is called once per frame
 
     void Update()
