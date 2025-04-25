@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Canvas
+  - Ground
+  - Carrot
+  - Mushroom
+  - Pumpkin
+  - Lettuce
   layers:
   - Default
   - TransparentFX
