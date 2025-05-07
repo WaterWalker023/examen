@@ -32,6 +32,7 @@ public class PauseGame : MonoBehaviour
         Time.timeScale = 0;
         
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+        GameObject.Find("Canvas").GetComponent<GameOver>().enabled = false;
 
         if (isOpen)
         {
@@ -52,6 +53,8 @@ public class PauseGame : MonoBehaviour
         isOpen = false;
         
         resumeGame.Invoke();
+        
+        GameObject.Find("Canvas").GetComponent<GameOver>().enabled = true;
     }
 
     public void BackToMenu(string sceneName)

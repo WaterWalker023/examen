@@ -22,6 +22,8 @@ public class OrderSystem : MonoBehaviour
     
     [SerializeField] private int orderOn;
     [SerializeField] private int orderOff;
+
+    [SerializeField] private int ingredientTimeAdd;
     
     private bool orderRandomized;
     private bool orderSelected;
@@ -155,6 +157,7 @@ public class OrderSystem : MonoBehaviour
                     Destroy(other.gameObject);
                 
                     orderTexts[i].text = currentOrders[i].ToString(": " + currentOrders[i]);
+                    GameObject.FindWithTag("Canvas").GetComponent<dayNightCycle>().GetTime += ingredientTimeAdd;
                 }
             }
             else if (!other.gameObject.CompareTag(ingredientsTags[i]))

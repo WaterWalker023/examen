@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1603645776896236737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.793, z: -0.09}
+  m_LocalPosition: {x: 0, y: 4.83, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -692,6 +692,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9100020185655212058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670843378037667236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f6dc0a7972d0d4483e1373765c689b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCapsule: {fileID: 750325356451627861}
+  endCapsule: {fileID: 3813766888193991457}
+  radiusCapsule: 0.5
+  overlapLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  upThrowForce: 400
+  horizontalThrowForce: 0
+  carryPoint: {fileID: 1603645776896236737}
 --- !u!1001 &4999459537077801775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -781,24 +802,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4999459537077801775}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9100020185655212058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8670843378037667236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98f6dc0a7972d0d4483e1373765c689b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startCapsule: {fileID: 750325356451627861}
-  endCapsule: {fileID: 3813766888193991457}
-  radiusCapsule: 0.5
-  overlapLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  upThrowForce: 400
-  verticalThrowForce: 600
-  carryPoint: {fileID: 1603645776896236737}
