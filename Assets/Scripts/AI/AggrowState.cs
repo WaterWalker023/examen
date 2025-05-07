@@ -18,6 +18,7 @@ public class AggrowState : MonoBehaviour
     {
         _agent = gameObject.GetComponent<NavMeshAgent>();
         _distance = 0;
+        _noPlayerVisibleTime = 0;
         
         var allplayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
         foreach (var player in allplayers)
@@ -40,7 +41,7 @@ public class AggrowState : MonoBehaviour
             _agent.SetDestination(_target.transform.position);
         }
         
-        if (_hit.distance <= attackDistance)
+        if (_hit.distance <= attackDistance && _hit.collider.gameObject.CompareTag("Player"))
         {
             _hit.transform.position = _hit.transform.parent.position;
         }
