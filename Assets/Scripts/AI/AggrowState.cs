@@ -40,7 +40,7 @@ public class AggrowState : MonoBehaviour
             _agent.SetDestination(_target.transform.position);
         }
         
-        if (_hit.distance <= attackDistance)
+        if (_hit.distance <= attackDistance &&  3 == _hit.transform.gameObject.layer)
         {
             _hit.transform.position = _hit.transform.parent.position;
         }
