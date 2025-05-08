@@ -5,8 +5,9 @@ using Random = UnityEngine.Random;
 
 public class OrderSystem : MonoBehaviour
 {
-    private int[] orders = {0, 0, 0, 0};
-    private int[] currentOrders = {0, 0, 0, 0};
+    [SerializeField] private int[] orders = {0, 0, 0};
+    [SerializeField] private int[] currentOrders = {0, 0, 0};
+    
     private int selectedOrders = 0;
 
     private int totalOnOff;

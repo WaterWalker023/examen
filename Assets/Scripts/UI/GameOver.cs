@@ -11,12 +11,7 @@ public class GameOver : MonoBehaviour
     public UnityEvent gameOver = new();
 
     private bool isGameOver;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private bool stoppedPlayerMovement;
 
     // Update is called once per frame
     void Update()
@@ -25,16 +20,17 @@ public class GameOver : MonoBehaviour
             GameObject.FindWithTag("OrderSystem").GetComponent<OrderSystem>().maxOrdersDailyList &&
             GameObject.FindWithTag("Canvas").GetComponent<dayNightCycle>().GetTime == 0)
         {
-            GameOverEvent();
+            gameOver.Invoke();
         }
         else
         {
             isGameOver = false;
+            stoppedPlayerMovement = false;
             Time.timeScale = 1;
         }
     }
 
-    private void GameOverEvent()
+    public void GameOverEvent()
     {
         isGameOver = true;
         
@@ -43,8 +39,15 @@ public class GameOver : MonoBehaviour
         _playerInputDeactivate = FindAnyObjectByType<PlayerInputManager>();
         _playerInputDeactivate.GetComponent<PlayerInputManager>().enabled = false;
         
-        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
-        
-        gameOver.Invoke();
+        var allplayers = GameObject.FindGameObjectsWithTag("Player");
+
+        if (!stoppedPlayerMovement)
+        {
+            for (int p = 0; p < allplayers.Length; p++)
+            {
+                allplayers[p].GetComponent<PlayerMovement>().enabled = false;
+                stoppedPlayerMovement = true;
+            }
+        }
     }
 }

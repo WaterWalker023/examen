@@ -4828,7 +4828,6 @@ MonoBehaviour:
   orderOn: 2
   orderOff: 0
   ingredientTimeAdd: 15
-  sunPosition: {fileID: 0}
   orderTexts:
   - {fileID: 8249518151176804651}
   - {fileID: 5038873828567447780}
@@ -8810,8 +8809,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45500fd438e589f4cbb790ca9bcb85c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeGame: 120
-  displayTime: 120
+  timeGame: 30
+  displayTime: 30
   totalDegreesToTravel: 180
   startingOffset: 0
   timeGameTXT: {fileID: 8260287913379538582}
