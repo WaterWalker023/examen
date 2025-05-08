@@ -7,9 +7,9 @@ TagManager:
   - Canvas
   - Ground
   - Carrot
-  - Mushroom
-  - Pumpkin
   - Lettuce
+  - OrderSystem
+  - Beets
   layers:
   - Default
   - TransparentFX

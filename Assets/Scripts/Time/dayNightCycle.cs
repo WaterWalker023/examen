@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Serialization;
@@ -25,13 +26,17 @@ public class dayNightCycle : MonoBehaviour
         {
             return timeGame;
         }
+        set
+        {
+            timeGame = value;
+        }
     }
-
     
     private void Start()
     {
         totaltime = timeGame;
         totalDisplayTime = displayTime;
+        timeGame = Convert.ToInt32(displayTime);
     }
 
     // Update is called once per frame
@@ -47,7 +52,7 @@ public class dayNightCycle : MonoBehaviour
 
         timeGameTXT.text = Mathf.Floor(displayTime / 60).ToString("00") + ":" + Mathf.Floor(displayTime % 60).ToString("00");
 
-        directionalLight.transform.rotation = Quaternion.Euler((timeGame / totaltime * totalDegreesToTravel) + startingOffset, 0, 0);
+        //directionalLight.transform.rotation = Quaternion.Euler((timeGame / totaltime * totalDegreesToTravel) + startingOffset, 0, 0);
 
         if (!(timeGame <= 0)) return;
         timeGame = 0;

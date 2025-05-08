@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseGame : MonoBehaviour
 {
     [SerializeField] private GameObject pauseGameUI;
 
     private bool isOpen;
+    
+    private PlayerInputManager _playerInputDeactivate;
 
     public UnityEvent resumeGame = new();
 
@@ -27,8 +30,9 @@ public class PauseGame : MonoBehaviour
         pauseGame.Invoke();
 
         Time.timeScale = 0;
-
+        
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+        GameObject.Find("Canvas").GetComponent<GameOver>().enabled = false;
 
         if (isOpen)
         {
@@ -49,6 +53,8 @@ public class PauseGame : MonoBehaviour
         isOpen = false;
         
         resumeGame.Invoke();
+        
+        GameObject.Find("Canvas").GetComponent<GameOver>().enabled = true;
     }
 
     public void BackToMenu(string sceneName)
