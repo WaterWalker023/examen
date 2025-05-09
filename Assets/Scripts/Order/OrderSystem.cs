@@ -5,8 +5,9 @@ using Random = UnityEngine.Random;
 
 public class OrderSystem : MonoBehaviour
 {
-    private int[] orders = {0, 0, 0, 0};
-    private int[] currentOrders = {0, 0, 0, 0};
+    [SerializeField] private int[] orders = {0, 0, 0};
+    [SerializeField] private int[] currentOrders = {0, 0, 0};
+    
     private int selectedOrders = 0;
 
     private int totalOnOff;
@@ -22,6 +23,8 @@ public class OrderSystem : MonoBehaviour
     
     [SerializeField] private int orderOn;
     [SerializeField] private int orderOff;
+
+    [SerializeField] private int ingredientTimeAdd;
     
     private bool orderRandomized;
     private bool orderSelected;
@@ -29,6 +32,22 @@ public class OrderSystem : MonoBehaviour
     [SerializeField] private List<TMP_Text> orderTexts;
 
     [SerializeField] private string[] ingredientsTags;
+
+    public int ordersCompletedList
+    {
+        get
+        {
+            return ordersCompleted;
+        }
+    }
+    
+    public int maxOrdersDailyList
+    {
+        get
+        {
+            return maxAmountOfOrdersDaily;
+        }
+    }
 
     // Update is called once per frame
 
@@ -139,6 +158,7 @@ public class OrderSystem : MonoBehaviour
                     Destroy(other.gameObject);
                 
                     orderTexts[i].text = currentOrders[i].ToString(": " + currentOrders[i]);
+                    GameObject.FindWithTag("Canvas").GetComponent<dayNightCycle>().GetTime += ingredientTimeAdd;
                 }
             }
             else if (!other.gameObject.CompareTag(ingredientsTags[i]))
