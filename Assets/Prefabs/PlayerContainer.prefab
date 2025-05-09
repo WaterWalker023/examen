@@ -91,8 +91,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5371260181934628491}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.080419734, y: -0, z: -0, w: 0.9967611}
-  m_LocalPosition: {x: 0, y: 3.998796, z: -24.620193}
+  m_LocalRotation: {x: 0.080677785, y: 0, z: 0, w: 0.9967403}
+  m_LocalPosition: {x: 0, y: 4.658796, z: -28.620193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5d7c088409d9a40b7b09aa707777f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetOffset: {x: 0, y: 8.34, z: 0}
+  TargetOffset: {x: 0, y: 9, z: -4}
   TrackerSettings:
     BindingMode: 3
     PositionDamping: {x: 0, y: 0, z: 0}
@@ -407,8 +407,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7115597807828857542}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.080419734, y: 0, z: 0, w: 0.9967611}
-  m_LocalPosition: {x: 0, y: 3.998796, z: -24.620193}
+  m_LocalRotation: {x: 0.080677785, y: 0, z: 0, w: 0.9967403}
+  m_LocalPosition: {x: 0, y: 4.658796, z: -28.620193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startCapsule: {fileID: 750325356451627861}
   endCapsule: {fileID: 3813766888193991457}
-  radiusCapsule: 0.8
+  radiusCapsule: 2
   overlapLayer:
     serializedVersion: 2
     m_Bits: 64
