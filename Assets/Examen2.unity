@@ -5463,6 +5463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a8484e34b14c1fb8dfbd332459545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orders: 000000000000000000000000
+  currentOrders: 000000000000000000000000
   maxAmountOfOrdersDaily: 5
   maxOrder: 5
   minOrder: 1
@@ -5470,6 +5472,7 @@ MonoBehaviour:
   minSelectedOrder: 0
   orderOn: 2
   orderOff: 0
+  ingredientTimeAdd: 0
   orderTexts:
   - {fileID: 1911206577}
   - {fileID: 1609426713}
@@ -14763,7 +14766,7 @@ PrefabInstance:
     - target: {fileID: 2070556790506707386, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
       propertyPath: m_Speed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2070556790506707386, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
@@ -14772,8 +14775,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2610999621751565807, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
+      propertyPath: sphereRadius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610999621751565807, guid: 8ad46e1cb30bbe59f94906df941b7721,
+        type: 3}
       propertyPath: attackDistance
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610999621751565807, guid: 8ad46e1cb30bbe59f94906df941b7721,
+        type: 3}
+      propertyPath: visionLayer.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3294792313674911316, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
@@ -14802,18 +14815,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7297197514887954017, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
+      propertyPath: visionRange
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297197514887954017, guid: 8ad46e1cb30bbe59f94906df941b7721,
+        type: 3}
       propertyPath: sphereRadius
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7297197514887954017, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
       propertyPath: timeToSeePlayer
-      value: 0.75
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8867803200580324546, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -187.5
+      value: -85.9
       objectReference: {fileID: 0}
     - target: {fileID: 8867803200580324546, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
@@ -14823,7 +14841,7 @@ PrefabInstance:
     - target: {fileID: 8867803200580324546, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -252.9
+      value: -62.5
       objectReference: {fileID: 0}
     - target: {fileID: 8867803200580324546, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}

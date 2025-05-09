@@ -11,6 +11,7 @@ public class AggrowState : MonoBehaviour
     [SerializeField] private float sphereRadius;
     [SerializeField] private float attackDistance;
     private RaycastHit _hit;
+    [SerializeField] LayerMask visionLayer;
     
     private float _noPlayerVisibleTime;
     [SerializeField] private float giveUpTime;
@@ -18,12 +19,12 @@ public class AggrowState : MonoBehaviour
     {
         _agent = gameObject.GetComponent<NavMeshAgent>();
         _distance = 0;
-        _noPlayerVisibleTime = 0;
         
-        var allplayers = FindObjectsByType<PlayerMovement>(FindObjectsSortMode.None);
+        var allplayers = GameObject.FindGameObjectsWithTag("Player");
         foreach (var player in allplayers)
         {
-            Physics.Raycast(transform.position,player.transform.position - transform.position, out _hit, math.INFINITY);
+            Physics.SphereCast(transform.position,sphereRadius,player.transform.position - transform.position, out _hit, math.INFINITY,visionLayer);
+            
             if (_hit.collider.transform == player.transform && _hit.distance > _distance)
             {
                 _distance = _hit.distance;
@@ -41,7 +42,7 @@ public class AggrowState : MonoBehaviour
             _agent.SetDestination(_target.transform.position);
         }
         
-        if (_hit.distance <= attackDistance && _hit.collider.gameObject.CompareTag("Player"))
+        if (_hit.distance <= attackDistance &&  3 == _hit.transform.gameObject.layer)
         {
             _hit.transform.position = _hit.transform.parent.position;
         }
