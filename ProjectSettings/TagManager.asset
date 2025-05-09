@@ -10,6 +10,7 @@ TagManager:
   - Lettuce
   - OrderSystem
   - Beets
+  - Mushroom
   layers:
   - Default
   - TransparentFX
