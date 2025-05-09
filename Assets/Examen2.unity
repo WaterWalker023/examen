@@ -6946,7 +6946,7 @@ GameObject:
   - component: {fileID: 688973619}
   m_Layer: 0
   m_Name: DeliverPoint
-  m_TagString: Untagged
+  m_TagString: OrderSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18985,7 +18985,7 @@ PrefabInstance:
     - target: {fileID: 2070556790506707386, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
       propertyPath: m_Speed
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2070556790506707386, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
@@ -19050,7 +19050,7 @@ PrefabInstance:
     - target: {fileID: 8867803200580324546, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -85.9
+      value: -186.4
       objectReference: {fileID: 0}
     - target: {fileID: 8867803200580324546, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
@@ -19060,7 +19060,7 @@ PrefabInstance:
     - target: {fileID: 8867803200580324546, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -62.5
+      value: -244.4
       objectReference: {fileID: 0}
     - target: {fileID: 8867803200580324546, guid: 8ad46e1cb30bbe59f94906df941b7721,
         type: 3}
