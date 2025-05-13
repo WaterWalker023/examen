@@ -114,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool Isgrounded()
     {
+        Debug.Log("is ground");
         return Physics.CheckSphere(transform.position - groundCheck, groundCheckSize, groundLayerMask);
     }
 }
