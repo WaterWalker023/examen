@@ -5407,8 +5407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45500fd438e589f4cbb790ca9bcb85c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeGame: 120
-  displayTime: 120
+  timeGame: 600
+  displayTime: 600
   totalDegreesToTravel: 180
   startingOffset: 0
   timeGameTXT: {fileID: 242366652}

@@ -38,16 +38,13 @@ public class GameOver : MonoBehaviour
         
         _playerInputDeactivate = FindAnyObjectByType<PlayerInputManager>();
         _playerInputDeactivate.GetComponent<PlayerInputManager>().enabled = false;
-        
-        var allplayers = GameObject.FindGameObjectsWithTag("Player");
+
+        var allplayers = CharacterController.FindAnyObjectByType<CharacterController>();
 
         if (!stoppedPlayerMovement)
         {
-            for (int p = 0; p < allplayers.Length; p++)
-            {
-                allplayers[p].GetComponent<PlayerMovement>().enabled = false;
-                stoppedPlayerMovement = true;
-            }
+            allplayers.GetComponent<PlayerMovement>().enabled = false;
+            stoppedPlayerMovement = true;
         }
     }
 }
