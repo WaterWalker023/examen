@@ -8,10 +8,12 @@ public class WalkingState : MonoBehaviour
 {
     private NavMeshAgent _agent;
     [SerializeField] private Vector4 randomrange;
+    private Transform Starting;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Starting = transform;
         _agent = gameObject.GetComponent<NavMeshAgent>();
     }
 
@@ -20,8 +22,8 @@ public class WalkingState : MonoBehaviour
     {
         if (_agent.remainingDistance <= 1)
         {
-            _agent.SetDestination(new Vector3(Random.Range(randomrange.x, randomrange.y + 1), 0,
-                Random.Range(randomrange.z, randomrange.w + 1)));
+            _agent.SetDestination(new Vector3((Random.Range(randomrange.x, randomrange.y + 1)+ Starting.position.x), 0,
+                (Random.Range(randomrange.z, randomrange.w + 1) + Starting.position.z)));
         }
     }
 }
