@@ -57,7 +57,6 @@ public class PlayerPickup : MonoBehaviour
             var interactable = _holdingObject.GetComponent<IInteractable>();
             interactable.PutDown(this, gameObject);
             _isHoldingObject = false;
-            GetComponent<PlayerMovement>().ResetJump();
             _holdingObject = null;
         }
         
@@ -69,7 +68,6 @@ public class PlayerPickup : MonoBehaviour
             {
                 interactable.Interact(this, gameObject);
                 _isHoldingObject = true;
-                GetComponent<PlayerMovement>().currentJumpSpeed = 0;
                 _holdingObject = _colliders[0].gameObject;
             }
         }
