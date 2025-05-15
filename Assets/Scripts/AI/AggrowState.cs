@@ -19,6 +19,8 @@ public class AggrowState : MonoBehaviour
     {
         _agent = gameObject.GetComponent<NavMeshAgent>();
         _distance = 0;
+        _agent.speed = 40;
+        
         
         var allplayers = GameObject.FindGameObjectsWithTag("Player");
         foreach (var player in allplayers)
