@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -28,6 +29,8 @@ public class OrderSystem : MonoBehaviour
     
     private bool orderRandomized;
     private bool orderSelected;
+
+    private bool tutorialCompleted;
     
     [SerializeField] private List<TMP_Text> orderTexts;
 
@@ -49,11 +52,19 @@ public class OrderSystem : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        currentOrders[0] = 1;
+        orderTexts[0].text = currentOrders[0].ToString(": " + currentOrders[0]);
+    }
+
     // Update is called once per frame
 
     void Update()
     {
         if (!GameObject.FindWithTag("Canvas").GetComponent<MainMenu>().HasClicked) return;
+        tutorialOrder();
+        if (!tutorialCompleted) return;
         SelectedOrder();
 
         var ordersDone = 0;
@@ -76,6 +87,14 @@ public class OrderSystem : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         CheckIngredient(other);
+    }
+
+    private void tutorialOrder()
+    {
+        if (currentOrders[0] == 0)
+        {
+            tutorialCompleted = true;
+        }
     }
 
     private void OrderCompleted()

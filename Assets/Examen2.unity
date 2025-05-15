@@ -557,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -1282,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -2059,7 +2059,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -4007,7 +4007,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Examen_Bor
+          m_StringArgument: Examen2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &413313712
@@ -5407,8 +5407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45500fd438e589f4cbb790ca9bcb85c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeGame: 120
-  displayTime: 120
+  timeGame: 300
+  displayTime: 300
   totalDegreesToTravel: 180
   startingOffset: 0
   timeGameTXT: {fileID: 242366652}
@@ -7503,7 +7503,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -9697,7 +9697,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -12167,7 +12167,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -12352,7 +12352,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -13045,7 +13045,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -13382,7 +13382,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -13736,7 +13736,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -17007,7 +17007,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -17516,7 +17516,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -20822,7 +20822,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
@@ -21005,7 +21005,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom
+      value: Beets
       objectReference: {fileID: 0}
     - target: {fileID: 7028492085017590856, guid: bd3f3bb7b5f11d6428986bc06afcd9a0,
         type: 3}
