@@ -11,6 +11,7 @@ TagManager:
   - OrderSystem
   - Beets
   - Mushroom
+  - Onion
   layers:
   - Default
   - TransparentFX
