@@ -1,12 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class GameOver : MonoBehaviour
 {
+    private InputActionAsset _inputActionAsset;
+    private InputActionMap _playerInputMap;
+    
     [SerializeField] private GameObject gameOverUI;
     
-    private PlayerInputManager _playerInputDeactivate;
+    private GameObject[] _playerInputDeactivate;
     
     public UnityEvent gameOver = new();
 
@@ -35,16 +39,23 @@ public class GameOver : MonoBehaviour
         isGameOver = true;
         
         Time.timeScale = 0;
+
+        _playerInputMap = _inputActionAsset.FindActionMap("GameOver");
         
-        _playerInputDeactivate = FindAnyObjectByType<PlayerInputManager>();
-        _playerInputDeactivate.GetComponent<PlayerInputManager>().enabled = false;
+        /*
+        var allplayers = FindAnyObjectByType<CharacterController>().GetComponent<PlayerMovement>();
+        allplayers.GetComponent<PlayerMovement>().enabled = false;
+        //var allPlayersMovement = FindObjectsByType<CharacterController>(PlayerMovement).Length;
 
-        var allplayers = CharacterController.FindAnyObjectByType<CharacterController>();
-
+        _playerInputDeactivate = GameObject.FindGameObjectsWithTag("Player");
         if (!stoppedPlayerMovement)
         {
-            allplayers.GetComponent<PlayerMovement>().enabled = false;
-            stoppedPlayerMovement = true;
+            for (int p = 0; p < _playerInputDeactivate.Length; p++)
+            {
+                _playerInputDeactivate[p].transform.parent.GetComponent<PlayerInputManager>().enabled = false;
+                stoppedPlayerMovement = true;
+            }
         }
+        */
     }
 }

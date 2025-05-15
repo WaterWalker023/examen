@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class ArrowGuide : MonoBehaviour
@@ -13,7 +14,7 @@ public class ArrowGuide : MonoBehaviour
 
     [SerializeField] private GameObject player;
     
-    private GameObject currentclosedobject;
+    private GameObject currentClosestObject;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,15 +45,19 @@ public class ArrowGuide : MonoBehaviour
             if (test < smallestNumber)
             {
                 smallestNumber = test;
-                currentclosedobject = arrowGuideTargets[i];
+                currentClosestObject = arrowGuideTargets[i];
             }
         }
         
-        arrowPoint.transform.LookAt(currentclosedobject.transform.position, Vector3.forward);
+        arrowPoint.transform.LookAt(currentClosestObject.transform.position, Vector3.forward);
         arrowPoint.transform.Rotate(new Vector3(0, -90, 90));
 
         if (!player.GetComponent<PlayerPickup>().havePickedUpIngredient) return;
         arrowPoint.transform.LookAt(arrowGuideHome.transform, Vector3.forward);
+        arrowPoint.transform.Rotate(new Vector3(0, -90, 90));
+        
+        if (player.GetComponent<PlayerPickup>().stillHoldingObject) return;
+        arrowPoint.transform.LookAt(currentClosestObject.transform.position, Vector3.forward);
         arrowPoint.transform.Rotate(new Vector3(0, -90, 90));
     }
 }

@@ -32,6 +32,14 @@ public class PlayerPickup : MonoBehaviour
             return _isHoldingObject;
         }
     }
+    
+    public bool stillHoldingObject
+    {
+        get
+        {
+            return _numFound > 0;
+        }
+    }
     void Start()
     {
         _inputActionAsset = GetComponent<PlayerInput>().actions;
