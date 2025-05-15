@@ -58,6 +58,11 @@ public class PlayerPickup : MonoBehaviour
         
     }
 
+    public void PickupGone()
+    {
+        _isHoldingObject = false;
+    }
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
