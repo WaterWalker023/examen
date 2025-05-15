@@ -32,4 +32,9 @@ public class SinglePickup : MonoBehaviour, IInteractable
         _rigidbody.AddForce(player.transform.forward*interactor.horizontalThrowForce);
         return true;
     }
+
+    private void OnDestroy()
+    {
+        transform.parent.GetComponent<PlayerPickup>().PickupGone();
+    }
 }
