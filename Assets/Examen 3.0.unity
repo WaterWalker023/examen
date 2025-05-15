@@ -4785,7 +4785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &491897331
 Transform:
   m_ObjectHideFlags: 0
@@ -5236,7 +5236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &539829283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6373,8 +6373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4a8484e34b14c1fb8dfbd332459545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orders: 000000000000000000000000
-  currentOrders: 000000000000000000000000
+  orders: 00000000000000000000000000000000
+  currentOrders: 00000000000000000000000000000000
   maxAmountOfOrdersDaily: 5
   maxOrder: 5
   minOrder: 1
@@ -6384,11 +6384,15 @@ MonoBehaviour:
   orderOff: 0
   ingredientTimeAdd: 0
   orderTexts:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1112253487}
+  - {fileID: 532250047}
+  - {fileID: 704958668}
+  - {fileID: 1927140930}
   ingredientsTags:
+  - Carrot
+  - Beets
   - Lettuce
-  - Mushroom
+  - Onion
 --- !u!65 &688973620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6660,7 +6664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &721591282
 Transform:
   m_ObjectHideFlags: 0
