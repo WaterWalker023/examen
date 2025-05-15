@@ -41,21 +41,5 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 0;
 
         _playerInputMap = _inputActionAsset.FindActionMap("GameOver");
-        
-        /*
-        var allplayers = FindAnyObjectByType<CharacterController>().GetComponent<PlayerMovement>();
-        allplayers.GetComponent<PlayerMovement>().enabled = false;
-        //var allPlayersMovement = FindObjectsByType<CharacterController>(PlayerMovement).Length;
-
-        _playerInputDeactivate = GameObject.FindGameObjectsWithTag("Player");
-        if (!stoppedPlayerMovement)
-        {
-            for (int p = 0; p < _playerInputDeactivate.Length; p++)
-            {
-                _playerInputDeactivate[p].transform.parent.GetComponent<PlayerInputManager>().enabled = false;
-                stoppedPlayerMovement = true;
-            }
-        }
-        */
     }
 }
