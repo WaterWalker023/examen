@@ -16,7 +16,12 @@ public class WalkingState : MonoBehaviour
         Starting = transform;
         _agent = gameObject.GetComponent<NavMeshAgent>();
     }
-
+    
+    private void OnEnable()
+    {
+        _agent = gameObject.GetComponent<NavMeshAgent>();
+        _agent.speed = 10;
+    }
     // Update is called once per frame
     void Update()
     {
