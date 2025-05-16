@@ -41,5 +41,7 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 0;
 
         _playerInputMap = _inputActionAsset.FindActionMap("GameOver");
+        
+        _playerInputMap.Enable();
     }
 }
