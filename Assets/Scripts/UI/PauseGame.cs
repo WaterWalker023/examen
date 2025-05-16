@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -40,7 +41,14 @@ public class PauseGame : MonoBehaviour
         }
         else
         {
+
             isOpen = true;
+        }
+        var allplayers = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in allplayers)
+        {
+            player.transform.parent.GetComponent<PlayerMovement>().enabled = !isOpen;
+            player.transform.parent.parent.GetComponentInChildren<CinemachineOrbitalFollow>().enabled = !isOpen;
         }
     }
 
@@ -49,6 +57,13 @@ public class PauseGame : MonoBehaviour
         Time.timeScale = 1;
         
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+        
+        var allplayers = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in allplayers)
+        {
+            player.transform.parent.GetComponent<PlayerMovement>().enabled = true;
+            player.transform.parent.parent.GetComponentInChildren<CinemachineOrbitalFollow>().enabled = true;
+        }
         
         isOpen = false;
         

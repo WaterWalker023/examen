@@ -6382,7 +6382,7 @@ MonoBehaviour:
   minSelectedOrder: 0
   orderOn: 2
   orderOff: 0
-  ingredientTimeAdd: 0
+  ingredientTimeAdd: 15
   orderTexts:
   - {fileID: 1112253487}
   - {fileID: 532250047}
@@ -8084,7 +8084,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Examen2
+          m_StringArgument: Examen 3.0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &872660351
@@ -9006,7 +9006,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -25, y: -70}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 60, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015919627
 MonoBehaviour:
@@ -9028,7 +9028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f2bcaf10366060646b6ec148c94cc06e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 773589ecfea661645a789f9136e784f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10330,8 +10330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45500fd438e589f4cbb790ca9bcb85c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeGame: 300
-  displayTime: 300
+  timeGame: 15
+  displayTime: 15
   totalDegreesToTravel: 180
   startingOffset: 0
   timeGameTXT: {fileID: 1037211327}
@@ -10377,6 +10377,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 539829282}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1123716273
 MonoBehaviour:
@@ -10690,7 +10702,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -50, y: 24}
-  m_SizeDelta: {x: 100, y: 200}
+  m_SizeDelta: {x: 125, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140216742
 MonoBehaviour:
@@ -12154,7 +12166,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Examen2
+          m_StringArgument: Examen 3.0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1463117901
