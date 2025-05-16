@@ -54,8 +54,8 @@ public class OrderSystem : MonoBehaviour
 
     void Start()
     {
-        currentOrders[0] = 1;
-        orderTexts[0].text = currentOrders[0].ToString(": " + currentOrders[0]);
+        currentOrders[3] = 1;
+        orderTexts[3].text = currentOrders[3].ToString(": " + currentOrders[3]);
     }
 
     // Update is called once per frame
@@ -91,7 +91,7 @@ public class OrderSystem : MonoBehaviour
 
     private void tutorialOrder()
     {
-        if (currentOrders[0] == 0)
+        if (currentOrders[3] == 0)
         {
             tutorialCompleted = true;
         }

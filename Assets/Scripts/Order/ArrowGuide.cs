@@ -52,12 +52,16 @@ public class ArrowGuide : MonoBehaviour
         arrowPoint.transform.LookAt(currentClosestObject.transform.position, Vector3.forward);
         arrowPoint.transform.Rotate(new Vector3(0, -90, 90));
 
-        if (!player.GetComponent<PlayerPickup>().havePickedUpIngredient) return;
-        arrowPoint.transform.LookAt(arrowGuideHome.transform, Vector3.forward);
-        arrowPoint.transform.Rotate(new Vector3(0, -90, 90));
+        if (player.GetComponent<PlayerPickup>().havePickedUpIngredient)
+        {
+            arrowPoint.transform.LookAt(arrowGuideHome.transform, Vector3.forward);
+            arrowPoint.transform.Rotate(new Vector3(0, -90, 90));
+        }
+        else
+        {
+            arrowPoint.transform.LookAt(currentClosestObject.transform.position, Vector3.forward);
+            arrowPoint.transform.Rotate(new Vector3(0, -90, 90));
+        }
         
-        if (player.GetComponent<PlayerPickup>().stillHoldingObject) return;
-        arrowPoint.transform.LookAt(currentClosestObject.transform.position, Vector3.forward);
-        arrowPoint.transform.Rotate(new Vector3(0, -90, 90));
     }
 }
