@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class AggrowState : MonoBehaviour
 {
-    private float _distance;
     private GameObject _target;
     private NavMeshAgent _agent;
     [SerializeField] private float sphereRadius;
@@ -18,26 +17,14 @@ public class AggrowState : MonoBehaviour
     private void OnEnable()
     {
         _agent = gameObject.GetComponent<NavMeshAgent>();
-        _distance = 0;
         _agent.speed = 40;
-        
-        
-        var allplayers = GameObject.FindGameObjectsWithTag("Player");
-        foreach (var player in allplayers)
-        {
-            Physics.SphereCast(transform.position,sphereRadius,player.transform.position - transform.position, out _hit, math.INFINITY,visionLayer);
-            
-            if (_hit.collider.transform == player.transform && _hit.distance > _distance)
-            {
-                _distance = _hit.distance;
-                _target = player.gameObject;
-            }
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        _target = targetplayer();
+        
         Physics.SphereCast(transform.position,sphereRadius, _target.transform.position - transform.position, out _hit, math.INFINITY);
         if (_hit.collider.transform == _target.transform)
         {
@@ -62,5 +49,23 @@ public class AggrowState : MonoBehaviour
         {
             _noPlayerVisibleTime = 0;
         }
+    }
+
+    private GameObject targetplayer()
+    {
+        var allplayers = GameObject.FindGameObjectsWithTag("Player");
+        var distance = 0f;
+        foreach (var player in allplayers)
+        {
+            Physics.SphereCast(transform.position, sphereRadius, player.transform.position - transform.position, out _hit,
+            math.INFINITY, visionLayer);
+            if (_hit.collider.transform == player.transform && _hit.distance > distance)
+            {
+                distance = _hit.distance;
+                _target = player.gameObject;
+            }
+        }
+        return _target;
+         
     }
 }
