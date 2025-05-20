@@ -6382,7 +6382,7 @@ MonoBehaviour:
   minSelectedOrder: 0
   orderOn: 2
   orderOff: 0
-  ingredientTimeAdd: 15
+  ingredientTimeAdd: 30
   orderTexts:
   - {fileID: 1112253487}
   - {fileID: 532250047}
@@ -10330,8 +10330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45500fd438e589f4cbb790ca9bcb85c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeGame: 15
-  displayTime: 15
+  timeGame: 600
+  displayTime: 600
   totalDegreesToTravel: 180
   startingOffset: 0
   timeGameTXT: {fileID: 1037211327}
