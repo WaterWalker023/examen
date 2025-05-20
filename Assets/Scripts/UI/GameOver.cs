@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -6,13 +9,10 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverUI;
     
-    private PlayerInputManager _playerInputDeactivate;
-    
     public UnityEvent gameOver = new();
 
     private bool isGameOver;
-    private bool stoppedPlayerMovement;
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -21,11 +21,16 @@ public class GameOver : MonoBehaviour
             GameObject.FindWithTag("Canvas").GetComponent<dayNightCycle>().GetTime == 0)
         {
             gameOver.Invoke();
+            var allplayers = GameObject.FindGameObjectsWithTag("Player");
+            foreach (var player in allplayers)
+            {
+                player.transform.parent.GetComponent<PlayerMovement>().enabled = false;
+                player.transform.parent.parent.GetComponentInChildren<CinemachineOrbitalFollow>().enabled = false;
+            }
         }
         else
         {
             isGameOver = false;
-            stoppedPlayerMovement = false;
             Time.timeScale = 1;
         }
     }
@@ -35,19 +40,5 @@ public class GameOver : MonoBehaviour
         isGameOver = true;
         
         Time.timeScale = 0;
-        
-        _playerInputDeactivate = FindAnyObjectByType<PlayerInputManager>();
-        _playerInputDeactivate.GetComponent<PlayerInputManager>().enabled = false;
-        
-        var allplayers = GameObject.FindGameObjectsWithTag("Player");
-
-        if (!stoppedPlayerMovement)
-        {
-            for (int p = 0; p < allplayers.Length; p++)
-            {
-                allplayers[p].GetComponent<PlayerMovement>().enabled = false;
-                stoppedPlayerMovement = true;
-            }
-        }
     }
 }

@@ -24,6 +24,14 @@ public class PlayerPickup : MonoBehaviour
     private int _numFound;
     private bool _isHoldingObject;
     private GameObject _holdingObject;
+
+    public bool havePickedUpIngredient
+    {
+        get
+        {
+            return _isHoldingObject;
+        }
+    }
     void Start()
     {
         _inputActionAsset = GetComponent<PlayerInput>().actions;
