@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Examen2.unity
-    guid: d7c3484e5939b7f45829797e63757e86
+    path: Assets/Scenes/final scenes/Intro.unity
+    guid: be0fbef074c55294ab316a12102fbe53
+  - enabled: 1
+    path: Assets/Scenes/final scenes/Examen 3.0.unity
+    guid: 3d0be57b1fcf76e47b5a1e3da5e43393
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e3c3434de5dabd241bd17de6fda783e2,
       type: 3}
