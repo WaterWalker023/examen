@@ -2680,6 +2680,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone(B)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84112d78c21c1f54b9c6ad80af20c7f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4755,6 +4760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone(B) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84112d78c21c1f54b9c6ad80af20c7f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5497,7 +5507,13 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2061720917}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &593646291
+--- !u!4 &593646292 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27476b34ac0f06844a31167ca33e669b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2061720917}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &593646295
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5518,13 +5534,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -2646962580524013922, guid: 27476b34ac0f06844a31167ca33e669b, type: 3}
---- !u!4 &593646292 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 27476b34ac0f06844a31167ca33e669b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2061720917}
-  m_PrefabAsset: {fileID: 0}
+  m_Mesh: {fileID: 5512361600001258384, guid: 46a218a05aab42e4bafe863d5547cdd8, type: 3}
 --- !u!1 &609344189
 GameObject:
   m_ObjectHideFlags: 0
@@ -9484,7 +9494,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27476b34ac0f06844a31167ca33e669b,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1069307485}
+      addedObject: {fileID: 1069307488}
   m_SourcePrefab: {fileID: 100100000, guid: 27476b34ac0f06844a31167ca33e669b, type: 3}
 --- !u!4 &1069307483 stripped
 Transform:
@@ -9498,7 +9508,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1069307482}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1069307485
+--- !u!64 &1069307488
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9519,7 +9529,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -2646962580524013922, guid: 27476b34ac0f06844a31167ca33e669b, type: 3}
+  m_Mesh: {fileID: 5512361600001258384, guid: 46a218a05aab42e4bafe863d5547cdd8, type: 3}
 --- !u!1 &1071158982
 GameObject:
   m_ObjectHideFlags: 0
@@ -11113,6 +11123,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone(B) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84112d78c21c1f54b9c6ad80af20c7f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11496,6 +11511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone(B) (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84112d78c21c1f54b9c6ad80af20c7f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11681,6 +11701,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stone(B) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84112d78c21c1f54b9c6ad80af20c7f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13207,6 +13232,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bloempot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27476b34ac0f06844a31167ca33e669b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13214,7 +13244,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27476b34ac0f06844a31167ca33e669b,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1556614585}
+      addedObject: {fileID: 1556614588}
   m_SourcePrefab: {fileID: 100100000, guid: 27476b34ac0f06844a31167ca33e669b, type: 3}
 --- !u!4 &1556614583 stripped
 Transform:
@@ -13228,7 +13258,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1556614582}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1556614585
+--- !u!64 &1556614588
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13249,7 +13279,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -2646962580524013922, guid: 27476b34ac0f06844a31167ca33e669b, type: 3}
+  m_Mesh: {fileID: 5512361600001258384, guid: 46a218a05aab42e4bafe863d5547cdd8, type: 3}
 --- !u!1 &1559419863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5d6c75807006e1f4888961049173e6d5,
@@ -17643,7 +17673,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27476b34ac0f06844a31167ca33e669b,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 593646291}
+      addedObject: {fileID: 593646295}
   m_SourcePrefab: {fileID: 100100000, guid: 27476b34ac0f06844a31167ca33e669b, type: 3}
 --- !u!1 &2065930376 stripped
 GameObject:
@@ -18081,6 +18111,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone(B) (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84112d78c21c1f54b9c6ad80af20c7f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18270,7 +18305,7 @@ PrefabInstance:
     - target: {fileID: 1825660843221216483, guid: 8e1aa01cb93f3ca429821006fbaa66d8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.45
+      value: 7.05
       objectReference: {fileID: 0}
     - target: {fileID: 1825660843221216483, guid: 8e1aa01cb93f3ca429821006fbaa66d8,
         type: 3}

@@ -40,8 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 move;
 
+    private Animator CharacterController;
     private DoublePickup _bigObject;
-    
+
 
     void Start()
     {
@@ -55,41 +56,49 @@ public class PlayerMovement : MonoBehaviour
 
         _playerController = GetComponent<CharacterController>();
         currentJumpSpeed = jumpSpeed;
+        
+
+        CharacterController = GetComponentInChildren < Animator > ();
     }
-    
+
     void Update()
     {
         Vector2 moveValue = _moveAction.ReadValue<Vector2>();
         Vector2 lookValue = _lookAction.ReadValue<Vector2>() * lookSens;
         var totalSpeed = _sprintAction.IsPressed() ? speed + sprintMult : speed;
         bool jumpValue = _jumpAction.ReadValue<float>() == 1;
-        
+
         move = transform.right * moveValue.x + transform.forward * moveValue.y;
-        
-        
+
+        if (moveValue != new Vector2(0, 0)) { CharacterController.SetBool("Running", true); }
+        else {CharacterController.SetBool("Running", false); }
+
         if (!_parseInput)
         {
-            _playerController.Move( totalSpeed * Time.deltaTime * move);
+            _playerController.Move(totalSpeed * Time.deltaTime * move);
         }
         else
         {
             _bigObject.GetComponent<TwoPlayerState>().waytogo(totalSpeed * move);
         }
-        
+
         Vector3 rotationEulerAngles = transform.rotation.eulerAngles;
         rotationEulerAngles = new Vector3(0, rotationEulerAngles.y + lookValue.x, 0);
-        
+
         transform.rotation = Quaternion.Euler(rotationEulerAngles);
 
         if (Isgrounded())
         {
             _velocity.y = -2;
+            CharacterController.SetBool("Jump", false);
         }
-        
+
         if (jumpValue && Isgrounded())
         {
             _velocity.y = Mathf.Sqrt(currentJumpSpeed * -2f * gravity);
+            CharacterController.SetBool("Jump", true);
         }
+        
         _velocity.y += gravity * Time.deltaTime;
         _playerController.Move(_velocity * Time.deltaTime);
     }
