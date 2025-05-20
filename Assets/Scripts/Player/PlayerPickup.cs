@@ -52,15 +52,11 @@ public class PlayerPickup : MonoBehaviour
         if (_isHoldingObject && _throwAction.WasPerformedThisFrame())
         {
             CharacterController.SetTrigger("Throw");
-            var interactable = _holdingObject.GetComponent<IInteractable>();
-            StartCoroutine(DelayAction(1, interactable));
+            StartCoroutine(DelayAction(1));
            
             _isHoldingObject = false;
             _holdingObject = null;
         }
-        var m_currentLayerWeight = CharacterController.GetLayerWeight(1);
-        m_currentLayerWeight = Mathf.SmoothDamp(m_currentLayerWeight, _isHoldingObject ? 1 : 0, ref yVelocity, 2f);
-        CharacterController.SetLayerWeight(1, m_currentLayerWeight);
 
         _numFound = Physics.OverlapCapsuleNonAlloc(startCapsule.transform.position, endCapsule.transform.position, radiusCapsule, _colliders, overlapLayer);
         if (_numFound > 0 && !_holdingObject)
@@ -74,7 +70,10 @@ public class PlayerPickup : MonoBehaviour
                 CharacterController.SetLayerWeight(1, 1);
             }
         }
-
+        
+        var m_currentLayerWeight = CharacterController.GetLayerWeight(1);
+        m_currentLayerWeight = Mathf.SmoothDamp(m_currentLayerWeight, _isHoldingObject ? 1 : 0, ref yVelocity, 2f);
+        CharacterController.SetLayerWeight(1, m_currentLayerWeight);
     }
 
     public void PickupGone()
@@ -89,8 +88,9 @@ public class PlayerPickup : MonoBehaviour
         Gizmos.DrawWireSphere(endCapsule.transform.position, radiusCapsule);
     }
 
-    IEnumerator DelayAction(float Time, IInteractable interactable)
+    IEnumerator DelayAction(float Time)
     {
+        var interactable = _holdingObject.GetComponent<IInteractable>();
         yield return new WaitForSeconds(Time);
         interactable.PutDown(this, gameObject);
     }

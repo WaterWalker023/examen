@@ -36,13 +36,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundCheckSize;
     private List<GameObject> _gameObjects;
     [SerializeField] private LayerMask groundLayerMask;
-   
-
+    
     private Vector3 move;
-
-    private Animator CharacterController;
+    
     private DoublePickup _bigObject;
-
+    
+    private Animator CharacterController;
 
     void Start()
     {
@@ -57,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
         _playerController = GetComponent<CharacterController>();
         currentJumpSpeed = jumpSpeed;
         
-
         CharacterController = GetComponentInChildren < Animator > ();
     }
 
@@ -70,8 +68,14 @@ public class PlayerMovement : MonoBehaviour
 
         move = transform.right * moveValue.x + transform.forward * moveValue.y;
 
-        if (moveValue != new Vector2(0, 0)) { CharacterController.SetBool("Running", true); }
-        else {CharacterController.SetBool("Running", false); }
+        if (moveValue != new Vector2(0, 0))
+        {
+            CharacterController.SetBool("Running", true);
+        }
+        else
+        {
+            CharacterController.SetBool("Running", false);
+        }
 
         if (!_parseInput)
         {
