@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1462461524753951727}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.82, z: 1.28}
+  m_LocalPosition: {x: 0, y: 11.29, z: 1.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -91,8 +91,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5371260181934628491}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24890868, y: -0, z: -0, w: 0.96852696}
-  m_LocalPosition: {x: 0, y: 15.4884815, z: -28.143314}
+  m_LocalRotation: {x: 0.3951628, y: -0, z: -0, w: 0.9186111}
+  m_LocalPosition: {x: 0, y: 24.733427, z: -23.42831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -185,7 +185,7 @@ MonoBehaviour:
       Time: 3
     Restrictions: 0
   VerticalAxis:
-    Value: 15.042727
+    Value: 39.001232
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -319,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 6699525473470612128}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.008, y: 8.07, z: 0.09}
+  m_LocalPosition: {x: 0.008, y: 11.97, z: 0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -407,8 +407,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7115597807828857542}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24890868, y: 0, z: 0, w: 0.96852696}
-  m_LocalPosition: {x: 0, y: 15.4884815, z: -28.143314}
+  m_LocalRotation: {x: 0.3951628, y: 0, z: 0, w: 0.9186111}
+  m_LocalPosition: {x: 0, y: 24.733427, z: -23.42831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -602,7 +602,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7897149424912109842}
@@ -661,7 +661,7 @@ MonoBehaviour:
   sprintMult: 2
   jumpSpeed: 15
   currentJumpSpeed: 0
-  lookSens: 1
+  lookSens: 1.5
   groundCheck: {x: 0, y: 0.45, z: 0}
   groundCheckSize: 0.6
   groundLayerMask:
@@ -685,13 +685,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 9
+  m_Height: 12.97
   m_Radius: 2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 4.51, z: 0}
+  m_Center: {x: 0, y: 6.2, z: 0}
 --- !u!114 &9100020185655212058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,7 +729,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 24a33c4a3f4538bdb8495e070d766fa3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: 16.54
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24a33c4a3f4538bdb8495e070d766fa3,
         type: 3}
