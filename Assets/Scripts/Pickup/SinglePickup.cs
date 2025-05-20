@@ -10,13 +10,17 @@ public class SinglePickup : MonoBehaviour, IInteractable
 
     private Rigidbody _rigidbody;
 
+    private ParticleSystem _vfx;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _vfx = GetComponentInChildren<ParticleSystem>();
     }
 
     public bool Interact(PlayerPickup interactor, GameObject player)
     {
+        _vfx.gameObject.SetActive(false);
         transform.SetParent(player.transform);
         transform.position = interactor.carryPoint.transform.position;
         transform.rotation = new Quaternion(0, 0, 0,0);
@@ -26,6 +30,7 @@ public class SinglePickup : MonoBehaviour, IInteractable
 
     public bool PutDown(PlayerPickup interactor,GameObject player)
     {
+        _vfx.gameObject.SetActive(true);
         _rigidbody.constraints = RigidbodyConstraints.None;
         transform.parent = null;
         _rigidbody.AddForce(player.transform.up*interactor.upThrowForce);
