@@ -34,7 +34,10 @@ public class AggrowState : MonoBehaviour
         if (_hit.distance <= attackDistance &&  3 == _hit.transform.gameObject.layer)
         {
             _hit.transform.position = _hit.transform.parent.position;
-            Destroy(_hit.transform.parent.GetComponentInChildren<SinglePickup>().gameObject);
+            if (_hit.transform.parent.GetComponentInChildren<SinglePickup>())
+            {
+                Destroy(_hit.transform.parent.GetComponentInChildren<SinglePickup>().gameObject);
+            }
         }
         
         if (!_agent.hasPath)
