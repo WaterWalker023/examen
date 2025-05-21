@@ -12,6 +12,8 @@ public class SinglePickup : MonoBehaviour, IInteractable
 
     private ParticleSystem _vfx;
 
+    private bool _isBeingHeld;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -25,6 +27,7 @@ public class SinglePickup : MonoBehaviour, IInteractable
         transform.position = interactor.carryPoint.transform.position;
         transform.rotation = new Quaternion(0, 0, 0,0);
         _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        _isBeingHeld = true;
         return true;
     }
 
@@ -35,11 +38,15 @@ public class SinglePickup : MonoBehaviour, IInteractable
         transform.parent = null;
         _rigidbody.AddForce(player.transform.up*interactor.upThrowForce);
         _rigidbody.AddForce(player.transform.forward*interactor.horizontalThrowForce);
+        _isBeingHeld = false;
         return true;
     }
 
     private void OnDestroy()
     {
-        transform.parent.GetComponent<PlayerPickup>().PickupGone();
+        if (_isBeingHeld)
+        {
+            transform.parent.GetComponent<PlayerPickup>().PickupGone();
+        }
     }
 }

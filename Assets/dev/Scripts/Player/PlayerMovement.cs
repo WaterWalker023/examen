@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -55,8 +56,13 @@ public class PlayerMovement : MonoBehaviour
 
         _playerController = GetComponent<CharacterController>();
         currentJumpSpeed = jumpSpeed;
-        
         CharacterController = GetComponentInChildren < Animator > ();
+
+        _playerController.enabled = false;
+        
+        transform.parent.transform.position += new Vector3(Random.Range(15f, 1f),0,Random.Range(15f, 1f));
+
+        _playerController.enabled = true;
     }
 
     void Update()
