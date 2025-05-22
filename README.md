@@ -54,4 +54,4 @@ In Sprout Scouts werk je samen om zo veel mogelijk ingrediënten te verzamelen. 
 - 📜 [**Code Conventies**](https://github.com/WaterWalker023/examen/wiki/code-conventies)  
 - 📝 [**Notulen Daily Scrums**](https://github.com/WaterWalker023/examen/wiki/Daily-SCRUM) 
 - 📊 [**Sprint Reviews**](https://github.com/WaterWalker023/examen/wiki/sprints)
-- 🧠 [**Miro Board**](https://miro.com/app/board/uXjVIOA5Uyw=/?share_link_id=260163997575)
+- 🧠 [**Miro Board**](https://miro.com/app/board/uXjVIOA5Uyw=/)
