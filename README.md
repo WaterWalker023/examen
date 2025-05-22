@@ -32,7 +32,7 @@ In Sprout Scouts werk je samen om zo veel mogelijk ingrediënten te verzamelen. 
 
 #### Mauro
 - **Player Movement: [Code](https://github.com/WaterWalker023/examen/blob/main/Assets/dev/Scripts/Player/PlayerMovement.cs)**
-- **Item Trow: [Code](https://github.com/WaterWalker023/examen/blob/a2e5ce2001ec189152cd85fad0ac516f52d9367c/Assets/dev/Scripts/Pickup/SinglePickup.cs#L34-L43)**
+- **Item Throw: [Code](https://github.com/WaterWalker023/examen/blob/a2e5ce2001ec189152cd85fad0ac516f52d9367c/Assets/dev/Scripts/Pickup/SinglePickup.cs#L34-L43)**
 - **Player Camera: [Code](https://github.com/WaterWalker023/examen/blob/main/Assets/dev/Scripts/Player/PlayerCamera.cs)**
 - **Rat Attack in attack State: [Code](https://github.com/WaterWalker023/examen/blob/main/Assets/dev/Scripts/AI/AggrowState.cs)**
 - **Single PickUp: [Code](https://github.com/WaterWalker023/examen/blob/main/Assets/dev/Scripts/Pickup/SinglePickup.cs)**
