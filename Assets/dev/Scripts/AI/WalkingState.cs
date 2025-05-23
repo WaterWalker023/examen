@@ -10,7 +10,14 @@ public class WalkingState : MonoBehaviour
     [SerializeField] private Vector4 randomrange;
     private Transform Starting;
     private Animator RatController;
-
+    
+    private void OnEnable()
+    {
+        RatController = GetComponentInChildren<Animator>();
+        _agent = gameObject.GetComponent<NavMeshAgent>();
+        _agent.speed = 10;
+        RatController.SetBool("Walking", true);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,14 +28,7 @@ public class WalkingState : MonoBehaviour
         RatController = GetComponentInChildren<Animator>();
         RatController.SetBool("Walking", true);
     }
-
-
-    private void OnEnable()
-    {
-        _agent = gameObject.GetComponent<NavMeshAgent>();
-        _agent.speed = 10;
-        RatController.SetBool("Walking", true);
-    }
+    
     // Update is called once per frame
     void Update()
     {
