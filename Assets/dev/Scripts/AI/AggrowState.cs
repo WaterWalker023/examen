@@ -14,10 +14,12 @@ public class AggrowState : MonoBehaviour
     
     private float _noPlayerVisibleTime;
     [SerializeField] private float giveUpTime;
+    private Animator RatController;
     private void OnEnable()
     {
         _agent = gameObject.GetComponent<NavMeshAgent>();
         _agent.speed = 40;
+        RatController = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -30,14 +32,15 @@ public class AggrowState : MonoBehaviour
         {
             _agent.SetDestination(_target.transform.position);
         }
-        
-        if (_hit.distance <= attackDistance &&  3 == _hit.transform.gameObject.layer)
+
+        if (_hit.distance <= attackDistance && 3 == _hit.transform.gameObject.layer)
         {
             _hit.transform.position = _hit.transform.parent.position;
             if (_hit.transform.parent.GetComponentInChildren<SinglePickup>())
             {
                 Destroy(_hit.transform.parent.GetComponentInChildren<SinglePickup>().gameObject);
             }
+            RatController.SetTrigger("Attack");
         }
         
         if (!_agent.hasPath)
