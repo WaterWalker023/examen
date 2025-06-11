@@ -50,7 +50,7 @@ In Sprout Scouts werk je samen om zo veel mogelijk ingrediënten te verzamelen. 
 
 - 🔗 [**Functioneel Ontwerp**](https://github.com/WaterWalker023/examen/wiki/Functioneel-Ontwerp) 
 - 🔗 [**Technisch Ontwerp**](https://github.com/WaterWalker023/examen/wiki/Technical-Design) 
-- 🎥 [**Testfootage**](https://github.com/WaterWalker023/examen/wiki/User-feedback)
+- 🎥 [**User Tests**](https://github.com/WaterWalker023/examen/wiki/User-feedback)
 - 📜 [**Code Conventies**](https://github.com/WaterWalker023/examen/wiki/code-conventies)  
 - 📝 [**Notulen Daily Scrums**](https://github.com/WaterWalker023/examen/wiki/Daily-SCRUM) 
 - 📊 [**Sprint Reviews**](https://github.com/WaterWalker023/examen/wiki/sprints)
